@@ -703,4 +703,71 @@ document.addEventListener('DOMContentLoaded', function() {
             registerModal.show();
         });
     }
+
+
+    const loginForm = document.getElementById('log-form');
+    const registerForm = document.getElementById('reg-form');
+
+
+    // Handle login form submission
+    if (loginForm) {
+        loginForm.addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const formData = new FormData(loginForm);
+            const response = await fetch('/login', {
+                method: 'POST',
+                body: formData,
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                // Success: Flash success message
+                showAlert('Login successful!', 'success');
+                loginModal.hide();
+            } else {
+                // Error: Flash error message
+                showAlert(data.message || 'Something went wrong', 'danger');
+            }
+        });
+    }
+
+    // Handle register form submission
+    if (registerForm) {
+        registerForm.addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const formData = new FormData(registerForm);
+            const response = await fetch('/register', {
+                method: 'POST',
+                body: formData,
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                // Success: Flash success message
+                showAlert('Registration successful!', 'success');
+                registerModal.hide();
+            } else {
+                // Error: Flash error message
+                showAlert(data.message || 'Something went wrong', 'danger');
+            }
+        });
+    }
+
+    // Show alert message in the modal
+    function showAlert(message, type) {
+        const alertBox = document.createElement('div');
+        alertBox.classList.add('alert', `alert-${type}`);
+        alertBox.textContent = message;
+
+        // Append the alert box to the modal
+        const modalBody = document.querySelector('.modal-body');
+        modalBody.insertBefore(alertBox, modalBody.firstChild);
+
+        // Remove the alert after 3 seconds
+        setTimeout(() => alertBox.remove(), 3000);
+    }
 });
