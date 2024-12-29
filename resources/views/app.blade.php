@@ -636,17 +636,17 @@
                     <form id="log-form">
                         <div class="form-group">
                             <div class="input-group">
-                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                <input class="form-control" placeholder="Enter Username" type="text">
+                                <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                                <input class="form-control" placeholder="Enter email" name="email" type="email">
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="input-group">
-                                <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                                <input class="form-control" placeholder="Enter email" type="email">
+                                <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                                <input class="form-control" placeholder="Enter Password" name="password" type="password">
                             </div>
                         </div>
-                        <button type="button" class="site-button-secondry text-uppercase btn-block m-b10">Submit</button>
+                        <button type="submit" class="site-button-secondry text-uppercase btn-block m-b10">Submit</button>
                         <div class="font-12">Don't have an account? <a href="javascript:;" class="site-text-primary">Register Here</a></div>
                     </form>
                 </div>
@@ -686,7 +686,7 @@
                                 <input class="form-control" placeholder="Enter Password" type="email">
                             </div>
                         </div>
-                        <button type="button" class="site-button-secondry text-uppercase btn-block m-b10">Submit</button>
+                        <button type="submit" class="site-button-secondry text-uppercase btn-block m-b10">Submit</button>
                         <div class="font-12">Already Have an Account? <a href="javascript:;" class="site-text-primary">Login</a></div>
                     </form>
                 </div>
