@@ -672,19 +672,25 @@
                         <div class="form-group">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                <input class="form-control" placeholder="Enter Username" type="text">
+                                <input class="form-control" placeholder="Enter Username" name="name" type="text">
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                                <input class="form-control" placeholder="Enter email" type="email">
+                                <input class="form-control" placeholder="Enter email" name="email" type="email">
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-key"></i></span>
-                                <input class="form-control" placeholder="Enter Password" type="email">
+                                <input class="form-control" placeholder="Enter Password" name="password" type="password">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                                <input class="form-control" placeholder="Confirm Password" name="confirm_password" type="password">
                             </div>
                         </div>
                         <button type="submit" class="site-button-secondry text-uppercase btn-block m-b10">Submit</button>
