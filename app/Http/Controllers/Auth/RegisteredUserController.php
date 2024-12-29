@@ -5,20 +5,18 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Auth\Events\Registered;
-use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
-use Inertia\Inertia;
-use Inertia\Response;
 
 class RegisteredUserController extends Controller
 {
     /**
      * Display the registration view.
      */
-    public function create(): Response
+    public function create()
     {
         return Inertia::render('Auth/Register');
     }
@@ -28,24 +26,37 @@ class RegisteredUserController extends Controller
      *
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function store(Request $request): RedirectResponse
+    public function store(Request $request): \Illuminate\Foundation\Application|JsonResponse|\Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
     {
-        $request->validate([
+        // Validate the incoming data
+        $validated = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|lowercase|email|max:255|unique:'.User::class,
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
+        // Create the new user
         $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
+            'name' => $validated['name'],
+            'email' => $validated['email'],
+            'password' => Hash::make($validated['password']),
         ]);
 
+        // Fire the registered event
         event(new Registered($user));
 
-        Auth::login($user);
+        // Log the user in
+        //Auth::login($user);
 
-        return redirect(route('dashboard', absolute: false));
+        // Check if the request expects a JSON response
+        if ($request->wantsJson()) {
+            return response()->json([
+                'message' => 'Registration successful can now log in.',
+                'redirect' => route('home'),
+            ]);
+        }
+
+        // If it's not a JSON request, redirect the user
+        return redirect(route('home', absolute: false));
     }
 }
