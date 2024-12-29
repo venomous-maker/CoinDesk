@@ -690,7 +690,7 @@
                         <div class="form-group">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-key"></i></span>
-                                <input class="form-control" placeholder="Confirm Password" name="confirm_password" type="password">
+                                <input class="form-control" placeholder="Confirm Password" name="password_confirmation" type="password">
                             </div>
                         </div>
                         <button type="submit" class="site-button-secondry text-uppercase btn-block m-b10">Submit</button>
