@@ -1,3 +1,38 @@
-/*===================================== 
-YOU CAN WRIGHT CUSTOME CSS 
+/*=====================================
+YOU CAN WRIGHT CUSTOME CSS
 ======================================*/
+.alert {
+    padding: 10px 15px;
+    border-radius: 4px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    font-size: 14px;
+    position: relative;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.alert.fade-out {
+    animation: fadeOut 0.5s ease-out;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}

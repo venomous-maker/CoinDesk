@@ -19,6 +19,9 @@
 {{--        @inertia--}}
 {{--    </body>--}}
 {{--</html>--}}
+    <?php
+        $user = auth()->user();
+        ?>
 <!DOCTYPE html>
 
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
@@ -124,8 +127,12 @@
                             </div>
 
                             <ul class="list-unstyled e-p-bx pull-right">
-                                <li><a href="#" data-bs-toggle="modal" data-bs-target="#Login-form"><i class="fa fa-user"></i>Login</a></li>
-                                <li><a href="#" data-bs-toggle="modal" data-bs-target="#Register-form"><i class="fa fa-sign-in"></i>Register</a></li>
+                                @if(!$user)
+                                    <li><a href="#" data-bs-toggle="modal" data-bs-target="#Login-form"><i class="fa fa-user"></i>Login</a></li>
+                                    <li><a href="#" data-bs-toggle="modal" data-bs-target="#Register-form"><i class="fa fa-sign-in"></i>Register</a></li>
+                                @else
+                                    <li><a href="#" data-bs-toggle="modal" data-bs-target="#Logout-form"><i class="fa fa-lock"></i>Logout</a></li>
+                                @endif
                             </ul>
                         </div>
                     </div>
@@ -699,6 +706,26 @@
                 </div>
                 <div class="modal-footer text-center">
                     <div class="text-center"><img src="{{get_logo()}}" alt=""></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL LOGOUT -->
+    <div id="Logout-form" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header site-bg-primary">
+                    <button type="button" class="close" data-bs-dismiss="modal">&times;</button>
+                    <h4 class="modal-title text-white">Logout</h4>
+                </div>
+                <div class="modal-body text-center p-a30">
+                    <p>Are you sure you want to logout?</p>
+                    <div class="d-flex justify-content-center gap-2">
+                        <button id="logout-confirm" class="site-button-secondry text-uppercase btn-block m-b10">Yes, Logout</button>
+                        <button type="button" class="btn btn-secondary text-uppercase btn-block m-b10" data-bs-dismiss="modal">Cancel</button>
+                    </div>
                 </div>
             </div>
         </div>

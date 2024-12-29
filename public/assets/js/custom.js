@@ -730,10 +730,12 @@ document.addEventListener('DOMContentLoaded', function () {
             if (response.ok) {
                 // Success: Flash success message and redirect
                 showAlert_(data.message, 'success', loginModalBody);
+                flashMessage(data.message, 'success');
                 window.location.href = data.redirect; // Redirect user after successful login
             } else {
                 // Error: Flash error message
                 showAlert_(data.message || 'Something went wrong', 'danger', loginModalBody);
+                flashMessage(data.message || 'Something went wrong', 'danger');
             }
         });
     }
@@ -761,10 +763,12 @@ document.addEventListener('DOMContentLoaded', function () {
             if (response.ok) {
                 // Success: Flash success message and redirect
                 showAlert_(data.message, 'success', registerModalBody);
+                flashMessage(data.message, 'success');
                 window.location.href = data.redirect; // Redirect user after successful registration
             } else {
                 // Error: Flash error message
                 showAlert_(data.message || 'Something went wrong', 'danger', registerModalBody);
+                flashMessage(data.message || 'Something went wrong', 'danger');
             }
         });
     }
@@ -810,4 +814,78 @@ document.addEventListener('DOMContentLoaded', function () {
             alertBox.remove();
         }, 3000);
     }
+
+    const logoutButton = document.getElementById('logout-confirm');
+
+    if (logoutButton) {
+        logoutButton.addEventListener('click', async function () {
+            const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
+            try {
+                const response = await fetch('/logout', {
+                    method: 'POST',
+                    headers: {
+                        'X-CSRF-TOKEN': csrfToken,
+                        'Accept': 'application/json',
+                    },
+                });
+
+                if (response.ok) {
+                    flashMessage('User logged out');
+                    window.location.href = '/'; // Redirect to homepage after logout
+                } else {
+                    flashMessage('Logout failed', 'error');
+                }
+            } catch (error) {
+                flashMessage('Error during logout:' + error);
+            }
+        });
+    }
+
+    function flashMessage(message, type = 'success') {
+        const flashContainer = document.getElementById('flash-container');
+
+        // If container does not exist, create it
+        if (!flashContainer) {
+            const container = document.createElement('div');
+            container.id = 'flash-container';
+            container.style.position = 'fixed';
+            container.style.top = '10px';
+            container.style.right = '10px';
+            container.style.zIndex = '1050';
+            document.body.appendChild(container);
+        }
+
+        // Create the flash message
+        const alertBox = document.createElement('div');
+        alertBox.className = `alert alert-${type} fade show`;
+        alertBox.style.minWidth = '200px';
+        alertBox.style.marginBottom = '10px';
+        alertBox.textContent = message;
+
+        // Add close button
+        const closeButton = document.createElement('button');
+        closeButton.type = 'button';
+        closeButton.className = 'btn-close';
+        closeButton.setAttribute('aria-label', 'Close');
+        closeButton.style.float = 'right';
+        closeButton.style.marginTop = '-6px';
+        closeButton.addEventListener('click', () => {
+            alertBox.remove();
+        });
+
+        alertBox.appendChild(closeButton);
+
+        // Append the flash message to the container
+        const container = document.getElementById('flash-container');
+        container.appendChild(alertBox);
+
+        // Remove the message after 3 seconds
+        setTimeout(() => {
+            alertBox.classList.remove('show');
+            alertBox.classList.add('fade-out'); // Optional fade-out effect
+            setTimeout(() => alertBox.remove(), 500); // Delay to let fade-out complete
+        }, 3000);
+    }
+
 });
