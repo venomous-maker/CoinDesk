@@ -798,19 +798,17 @@ document.addEventListener('DOMContentLoaded', function () {
         alertBox.classList.add('alert', `alert-${type}`);
         alertBox.textContent = message;
 
-        // Insert alert box before each child element of modalBody
-        Array.from(modalBody.children).forEach((child) => {
-            modalBody.insertBefore(alertBox.cloneNode(true), child);
-        });
+        // Clear any existing alerts before adding the new one
+        const existingAlerts = modalBody.querySelectorAll('.alert');
+        existingAlerts.forEach(alert => alert.remove());
 
-        // If no child elements exist, insert the alert at the start
-        if (modalBody.children.length === 0) {
-            modalBody.appendChild(alertBox);
-        }
+        // Insert the alert box at the beginning of modalBody
+        modalBody.insertBefore(alertBox, modalBody.firstChild);
 
         // Remove the alert after 3 seconds
         setTimeout(() => {
             alertBox.remove();
         }, 3000);
     }
+
 });
