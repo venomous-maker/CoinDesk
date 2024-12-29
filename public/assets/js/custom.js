@@ -673,7 +673,7 @@ All JavaScript fuctions Start
 
 })(window.jQuery);
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Get the login and register modal elements
     const loginModal = new bootstrap.Modal(document.getElementById('Login-form'));
     const registerModal = new bootstrap.Modal(document.getElementById('Register-form'));
@@ -686,7 +686,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // When the "Already Have an Account?" link in register modal is clicked
     if (loginLink) {
-        loginLink.addEventListener('click', function(e) {
+        loginLink.addEventListener('click', function (e) {
             // Hide the registration modal
             registerModal.hide();
             // Show the login modal
@@ -696,7 +696,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // When the "Don't have an account? Register Here" link in login modal is clicked
     if (registerLink) {
-        registerLink.addEventListener('click', function(e) {
+        registerLink.addEventListener('click', function (e) {
             // Hide the login modal
             loginModal.hide();
             // Show the registration modal
@@ -704,9 +704,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    const loginModalBody = document.querySelector('#Login-form .modal-body');
+    const registerModalBody = document.querySelector('#Register-form .modal-body');
 
+    // Login form submission handling
     const loginForm = document.getElementById('log-form');
-
     if (loginForm) {
         loginForm.addEventListener('submit', async function (e) {
             e.preventDefault();
@@ -727,24 +729,88 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if (response.ok) {
                 // Success: Flash success message and redirect
-                showAlert(data.message, 'success');
+                showAlert_(data.message, 'success', loginModalBody);
                 window.location.href = data.redirect; // Redirect user after successful login
             } else {
                 // Error: Flash error message
-                showAlert(data.message || 'Something went wrong', 'danger');
+                showAlert_(data.message || 'Something went wrong', 'danger', loginModalBody);
+            }
+        });
+    }
+
+    // Register form submission handling
+    const registerForm = document.getElementById('reg-form');
+    if (registerForm) {
+        registerForm.addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const formData = new FormData(registerForm);
+            const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
+            const response = await fetch('/register', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json', // Ensure server knows to respond with JSON
+                    'X-CSRF-TOKEN': csrfToken,  // Add CSRF token in the request header
+                },
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                // Success: Flash success message and redirect
+                showAlert_(data.message, 'success', registerModalBody);
+                window.location.href = data.redirect; // Redirect user after successful registration
+            } else {
+                // Error: Flash error message
+                showAlert_(data.message || 'Something went wrong', 'danger', registerModalBody);
             }
         });
     }
 
     // Function to show alert messages
-    function showAlert(message, type) {
+    // Function to display alert and insert it into all child elements
+    function showAlert(message, type, modalBody) {
         const alertBox = document.createElement('div');
         alertBox.classList.add('alert', `alert-${type}`);
         alertBox.textContent = message;
 
-        const modalBody = document.querySelector('.modal-body');
-        modalBody.insertBefore(alertBox, modalBody.firstChild);
+        // Insert alert box before each child element of modalBody
+        Array.from(modalBody.children).forEach((child) => {
+            modalBody.insertBefore(alertBox.cloneNode(true), child);
+        });
 
-        setTimeout(() => alertBox.remove(), 3000); // Remove the alert after 3 seconds
+        // If no child elements exist, insert the alert at the start
+        if (modalBody.children.length === 0) {
+            modalBody.appendChild(alertBox);
+        }
+
+        // Remove the alert after 3 seconds
+        setTimeout(() => {
+            alertBox.remove();
+        }, 3000);
+    }
+
+    // Function to display alert and insert it into all child elements
+    function showAlert_(message, type, modalBody) {
+        const alertBox = document.createElement('div');
+        alertBox.classList.add('alert', `alert-${type}`);
+        alertBox.textContent = message;
+
+        // Insert alert box before each child element of modalBody
+        Array.from(modalBody.children).forEach((child) => {
+            modalBody.insertBefore(alertBox.cloneNode(true), child);
+        });
+
+        // If no child elements exist, insert the alert at the start
+        if (modalBody.children.length === 0) {
+            modalBody.appendChild(alertBox);
+        }
+
+        // Remove the alert after 3 seconds
+        setTimeout(() => {
+            alertBox.remove();
+        }, 3000);
     }
 });
