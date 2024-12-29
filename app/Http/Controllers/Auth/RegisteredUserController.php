@@ -51,7 +51,7 @@ class RegisteredUserController extends Controller
         // Check if the request expects a JSON response
         if ($request->wantsJson()) {
             return response()->json([
-                'message' => 'Registration successful can now log in.',
+                'message' => 'Registration successful you can now log in.',
                 'redirect' => route('home'),
             ]);
         }
