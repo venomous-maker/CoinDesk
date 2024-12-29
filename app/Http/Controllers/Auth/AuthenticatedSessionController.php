@@ -27,13 +27,33 @@ class AuthenticatedSessionController extends Controller
     /**
      * Handle an incoming authentication request.
      */
-    public function store(LoginRequest $request): RedirectResponse
+    public function store(LoginRequest $request)
     {
+        // Check if the request expects JSON (AJAX request)
+        if ($request->wantsJson()) {
+            // Attempt authentication
+            if (Auth::attempt($request->only('email', 'password'))) {
+                $request->session()->regenerate();
+
+                // Return success response
+                return response()->json([
+                    'message' => 'Login successful!',
+                    'redirect' => route('home'),
+                ]);
+            }
+
+            // Return error response if authentication fails
+            return response()->json([
+                'message' => 'Invalid credentials.',
+            ], 401);
+        }
+
+        // If not a JSON request (normal request), proceed as usual
         $request->authenticate();
 
         $request->session()->regenerate();
 
-        return redirect()->intended(route('dashboard', absolute: false));
+        return redirect()->intended(route('home', absolute: false));
     }
 
     /**
