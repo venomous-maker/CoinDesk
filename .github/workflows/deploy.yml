@@ -67,7 +67,6 @@ jobs:
             **/resources/js/**
             **/resources/css/**
             **/.env
-            **/storage/**
 
 #  ssh-commands:
 #    needs: deploy-cpanel
