@@ -810,5 +810,4 @@ document.addEventListener('DOMContentLoaded', function () {
             alertBox.remove();
         }, 3000);
     }
-
 });
