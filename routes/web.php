@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Trade\TradingController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -21,6 +22,10 @@ Route::get('/', function () {
         'phpVersion' => PHP_VERSION,
     ]);
 })->name('home');
+
+Route::prefix('/trade')->name('trade.')->group(function (){
+    Route::get('/trading', [TradingController::class, 'index'])->name('trading');
+});
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
