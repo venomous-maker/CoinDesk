@@ -166,7 +166,7 @@ $user = auth()->user();
                                 </li>
 
                                 <li>
-                                    <a href="{{route('home')}}">Market<i class="fa "></i></a>
+                                    <a href="{{route('market.index')}}">Market<i class="fa "></i></a>
                                 </li>
 
                                 <li>

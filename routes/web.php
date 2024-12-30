@@ -5,6 +5,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Trade\TradingController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Market\MarketController;
 use Inertia\Inertia;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -16,6 +17,10 @@ Route::prefix('/trade')->name('trade.')->group(function (){
     Route::get('/trading', [TradingController::class, 'index'])->name('trading');
 });
 
+
+Route::prefix('/markets')->name('market.')->group(function (){
+    Route::get('/index', [MarketController::class, 'index'])->name('index');
+});
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
