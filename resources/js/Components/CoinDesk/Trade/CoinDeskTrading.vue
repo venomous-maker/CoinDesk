@@ -34,6 +34,8 @@
             <div class="screener-container">
                 <Screener
                     :options="{
+                        width: '100%',
+                        height: 610,
                         defaultColumn: 'overview',
                         defaultScreen: 'general',
                         market: 'bitcoin',

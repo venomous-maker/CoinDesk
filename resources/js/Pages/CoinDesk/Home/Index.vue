@@ -13,28 +13,36 @@ import CoinDeskOurValue from '@/Components/CoinDesk/Sections/CoinDeskOurValue.vu
 import CoinDeskWhatOurClientsSay from '@/Components/CoinDesk/Sections/CoinDeskWhatOurClientsSay.vue';
 import CoinDeskWhyChooseUs from '@/Components/CoinDesk/Sections/CoinDeskWhyChooseUs.vue';
 import CoinDeskSlider from '@/Components/CoinDesk/Slider/CoinDeskSlider.vue';
+import { ref } from 'vue';
 
 defineProps<{
     canLogin?: boolean;
     canRegister?: boolean;
 }>();
+
+const isSliderInitialized = ref(false);
+function onSliderInitialized() {
+    // Wait for any async tasks to complete (e.g., API call, third-party library load)
+    isSliderInitialized.value = true;
+}
 </script>
 
 <template>
-    <coin-desk-slider></coin-desk-slider>
-    <coin-desk-marquee-scroll></coin-desk-marquee-scroll>
-    <coin-desk-our-value></coin-desk-our-value>
-    <coin-desk-about-company></coin-desk-about-company>
-    <coin-desk-why-choose-us></coin-desk-why-choose-us>
-    <coin-desk-company-details></coin-desk-company-details>
-    <coin-desk-how-it-work></coin-desk-how-it-work>
-    <coin-desk-currency-convertor></coin-desk-currency-convertor>
-    <coin-desk-our-team-member></coin-desk-our-team-member>
-    <coin-desk-any-query></coin-desk-any-query>
-    <coin-desk-latest-blog></coin-desk-latest-blog>
-    <coin-desk-contact-us></coin-desk-contact-us>
-    <coin-desk-what-our-clients-say></coin-desk-what-our-clients-say>
-    <coin-desk-our-clients></coin-desk-our-clients>
+    <coin-desk-slider ref="slider" @sliderInitialized="onSliderInitialized"></coin-desk-slider>
+
+        <coin-desk-marquee-scroll></coin-desk-marquee-scroll>
+        <coin-desk-our-value></coin-desk-our-value>
+        <coin-desk-about-company></coin-desk-about-company>
+        <coin-desk-why-choose-us></coin-desk-why-choose-us>
+        <coin-desk-company-details></coin-desk-company-details>
+        <coin-desk-how-it-work></coin-desk-how-it-work>
+        <coin-desk-currency-convertor></coin-desk-currency-convertor>
+        <coin-desk-our-team-member></coin-desk-our-team-member>
+        <coin-desk-any-query></coin-desk-any-query>
+        <coin-desk-latest-blog></coin-desk-latest-blog>
+        <coin-desk-contact-us></coin-desk-contact-us>
+        <coin-desk-what-our-clients-say></coin-desk-what-our-clients-say>
+        <coin-desk-our-clients></coin-desk-our-clients>
 </template>
 
 <style scoped></style>

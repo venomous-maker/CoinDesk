@@ -59,9 +59,9 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Crete+Round:400,400i&amp;subset=latin-ext" rel="stylesheet">
     <!-- Scripts -->
-    @routes
-    @vite(['resources/js/app.ts'])
-    @inertiaHead
+{{--    @routes--}}
+{{--    @vite(['resources/js/app.ts'])--}}
+{{--    @inertiaHead--}}
 
 </head>
 

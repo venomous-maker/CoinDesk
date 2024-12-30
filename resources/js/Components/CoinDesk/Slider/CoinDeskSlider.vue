@@ -1,5 +1,13 @@
 <script setup lang="ts">
 import { getImportedAsset } from '@/utils/assets';
+import { defineEmits, onMounted } from 'vue';
+const emiter = defineEmits(['sliderInitialized']);
+onMounted(() => {
+    // Perform the slider initialization (e.g., call external libraries, setup styles, etc.)
+
+    // Emit the 'sliderInitialized' event once initialization is complete
+    emiter('sliderInitialized');
+});
 </script>
 
 <template>

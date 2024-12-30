@@ -9,9 +9,7 @@ use Inertia\Inertia;
 class TradingController extends Controller
 {
     public function index(Request $request){
-        return Inertia::render('CoinDesk/Trade/CoinDeskTrading', [
-            'status' => session('status'),
-        ]);
+        return view('trade.trading');
     }
 
 }
