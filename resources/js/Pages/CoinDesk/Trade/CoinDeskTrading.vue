@@ -19,6 +19,8 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+// Lets ingnore build check here to avoid errors
+// @ts-ignore
 import { Chart, CryptoMarket, Screener, Snaps } from 'vue-tradingview-widgets';
 
 export default defineComponent({
