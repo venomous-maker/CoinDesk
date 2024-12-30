@@ -86,7 +86,7 @@ $user = auth()->user();
     <link href="https://fonts.googleapis.com/css?family=Crete+Round:400,400i&amp;subset=latin-ext" rel="stylesheet">
     <!-- Scripts -->
     @routes
-    @vite(['resources/js/app.ts', "resources/css/app.css"])
+    @vite(['resources/js/app.ts'])
     <script
         src="https://cdn.jsdelivr.net/gh/dejurin/crypto-converter-widget/dist/latest.min.js"
         async
