@@ -1,12 +1,5 @@
 <template>
     <div class="bg-black">
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
         <CryptoMarket :options="{ theme: theme }" />
         <div class="trading-container">
             <div class="chart-container">
@@ -46,7 +39,6 @@
                 />
             </div>
         </div>
-        <br />
     </div>
 </template>
 

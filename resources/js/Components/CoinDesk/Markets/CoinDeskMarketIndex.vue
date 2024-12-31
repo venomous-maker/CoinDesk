@@ -25,7 +25,7 @@ export default defineComponent({
 </script>
 
 <template>
-    <coin-desk-main-wrapper>
+    <coin-desk-main-wrapper :with-space="false">
         <MiniChart></MiniChart>
         <Screener
             :options="{
