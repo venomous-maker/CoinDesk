@@ -1,5 +1,4 @@
-<script lang="ts">
-import { defineComponent } from 'vue';
+<script setup lang="ts">
 // Lets ingnore build check here to avoid errors
 // @ts-ignore
 import {
@@ -10,22 +9,6 @@ import {
     TickerTape,
 } from 'vue-tradingview-widgets';
 
-export default defineComponent({
-    props: {
-        theme: {
-            type: String,
-            default: 'dark',
-        },
-    },
-    name: 'App',
-    components: {
-        Chart,
-        CryptoMarket,
-        Screener,
-        Snaps,
-        TickerTape,
-    },
-});
 </script>
 
 <template>

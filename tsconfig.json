@@ -15,7 +15,10 @@
         "types": ["vite/client"],
         "paths": {
             "@/*": ["./resources/js/*"],
-            "ziggy-js": ["./vendor/tightenco/ziggy"]
+            "ziggy-js": ["./vendor/tightenco/ziggy"],
+            "vue-tradingview-widgets": [
+                "./node_modules/vue-tradingview-widgets/dist/index.d.ts"
+            ]
         }
     },
     "include": ["resources/js/**/*.ts", "resources/js/**/*.d.ts", "resources/js/**/*.tsx", "resources/js/**/*.vue"],
