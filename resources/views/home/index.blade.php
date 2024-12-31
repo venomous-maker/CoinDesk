@@ -2,7 +2,8 @@
 @section('content')
     <div id="j">
         <coin-desk-slider></coin-desk-slider>
-        <coin-desk-marquee-scroll></coin-desk-marquee-scroll>
+{{--        <coin-desk-marquee-scroll></coin-desk-marquee-scroll>--}}
+        <coin-desk-ticker-tape-marquee-scroll></coin-desk-ticker-tape-marquee-scroll>
         <coin-desk-our-value></coin-desk-our-value>
         <coin-desk-about-company></coin-desk-about-company>
         <coin-desk-why-choose-us></coin-desk-why-choose-us>
