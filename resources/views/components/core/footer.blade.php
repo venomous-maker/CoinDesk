@@ -162,8 +162,8 @@
                         </div>
                         <div class="icon-content text-white">
                             <h5 class="wt-tilte text-uppercase m-b0">Email</h5>
-                            <p class="m-b0">info@demo.com</p>
-                            <p>info@demo1234.com</p>
+                            <p class="m-b0">info@coindesk.co.ke</p>
+                            <p>support@coindesk.com</p>
                         </div>
                     </div>
                 </div>

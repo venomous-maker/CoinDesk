@@ -3,7 +3,7 @@
         <div class="clearfix">
             <div class="wt-topbar-left">
                 <ul class="list-unstyled e-p-bx pull-left">
-                    <li><i class="fa fa-envelope"></i>mail@bitinvest.com</li>
+                    <li><i class="fa fa-envelope"></i>info@coindesk.co.ke</li>
                     <li><i class="fa fa-phone"></i>(654) 321-7654</li>
                 </ul>
             </div>
