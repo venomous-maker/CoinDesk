@@ -6,7 +6,7 @@
         </li>
 
         <li>
-            <a href="{{route('market.index')}}">About Us<i class="fa "></i></a>
+            <a href="{{route('home.about')}}">About Us<i class="fa "></i></a>
         </li>
 
         <li>

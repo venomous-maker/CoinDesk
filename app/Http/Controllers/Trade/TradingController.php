@@ -9,7 +9,8 @@ use Inertia\Inertia;
 class TradingController extends Controller
 {
     public function index(Request $request){
-        return view('trade.trading');
+        $pageName = 'Trading';
+        return view('trade.trading', compact(['pageName']));
     }
 
 }
