@@ -10,13 +10,14 @@ use Inertia\Inertia;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/test', function (){
-    return view('home.index');
-});
 Route::prefix('/trade')->name('trade.')->group(function (){
     Route::get('/trading', [TradingController::class, 'index'])->name('trading');
 });
 
+Route::prefix('/home')->name('home.')->group(function (){
+    Route::get('/index', [HomeController::class, 'index'])->name('index');
+    Route::get('/about', [HomeController::class, 'about'])->name('about');
+});
 
 Route::prefix('/markets')->name('market.')->group(function (){
     Route::get('/index', [MarketController::class, 'index'])->name('index');
