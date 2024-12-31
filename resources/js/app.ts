@@ -13,7 +13,7 @@ const app = createApp({});
 const components = import.meta.glob('./Components/**/*.vue', {
     eager: true,
 }) as Record<string, { default: any }>;
-console.log(Object.keys(components).length);
+// console.log(Object.keys(components).length);
 Object.keys(components).forEach((fileName) => {
     const componentName = fileName
         .split('/')
@@ -23,11 +23,11 @@ Object.keys(components).forEach((fileName) => {
     if (componentName) {
         // Optionally, extract folder name if needed
         const folderName = fileName.split('/').slice(-2, -1)[0];
-        console.log(`${folderName} - ${fileName}`);
+        // console.log(`${folderName} - ${fileName}`);
         // Register the component globally
         app.component(componentName, components[fileName].default);
     }
 });
 
 // // Mount the app
-app.mount('#appp');
+app.mount('#app');

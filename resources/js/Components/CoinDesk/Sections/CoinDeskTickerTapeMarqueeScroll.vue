@@ -1,4 +1,5 @@
-<script setup lang="ts">
+<script lang="ts">
+import { defineComponent} from 'vue';
 // Lets ingnore build check here to avoid errors
 // @ts-ignore
 import {
@@ -9,6 +10,19 @@ import {
     TickerTape,
 } from 'vue-tradingview-widgets';
 
+export default defineComponent({
+    name: 'CoinDeskTickerTapeMarqueeScroll',
+    components: {
+        CryptoMarket,
+        Chart,
+        Screener,
+        Snaps,
+        TickerTape,
+    },
+    data() {
+        return {};
+    },
+});
 </script>
 
 <template>
