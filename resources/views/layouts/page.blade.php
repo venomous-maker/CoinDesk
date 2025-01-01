@@ -238,11 +238,10 @@ $user = auth()->user();
         @include('components.core.modals')
 
     </div>
+    <!-- LOADING AREA START ===== -->
+    <coin-desk-standard-loader></coin-desk-standard-loader>
+    <!-- LOADING AREA  END ====== -->
 </div>
-
-<!-- LOADING AREA START ===== -->
-<coin-desk-standard-loader></coin-desk-standard-loader>
-<!-- LOADING AREA  END ====== -->
 
 
 
