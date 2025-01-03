@@ -19,9 +19,7 @@ import { getImportedAsset } from '@/utils/assets';
                                 Currency convertor
                             </h2>
                             <p>
-                                Lorem Ipsum has been the industry's standard
-                                dummy text ever since the 1500s, when an unknown
-                                printer took.
+                                Stay updated with live cryptocurrency exchange rates!
                             </p>
                         </div>
                         <div class="currency-calculator sp-one">
@@ -57,26 +55,20 @@ import { getImportedAsset } from '@/utils/assets';
                         >
                         <p>
                             <strong
-                                >Lorem Ipsum has been the industry's standard
-                                dummy text ever since the 1500s, when an unknown
-                                printer took a galley of type and scrambled it
-                                to make a type specimen book.</strong
+                                >Cryptocurrency has been revolutionizing the financial world since its inception. Whether you're looking to buy, sell, or trade, it's easy to get started. Dive into the world of crypto and explore the opportunities it offers. Don't miss out on the future of finance!</strong
                             >
                         </p>
                         <ul class="list-check-circle primary">
                             <li>
-                                Simply dummy text of the Lorem Ipsum is printing
-                                and type setting.
+                                Simplified Process for Beginners
                             </li>
                             <li>
-                                Dummy text of the printing and typesetting
-                                industry. Text of the printing
+                                Secure and Fast Transactions
                             </li>
                             <li>
-                                And typesetting industry Lorem Ipsum has been.
-                                Ipsum has been the
+                                Fast and Efficient
                             </li>
-                            <li>Industry's standard dummy since the 1500s,</li>
+                            <li>A Long-Standing Tradition in Digital Currency</li>
                         </ul>
                     </div>
                 </div>

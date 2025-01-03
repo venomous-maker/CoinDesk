@@ -20,9 +20,7 @@ import { getImportedAsset } from '@/utils/assets';
                                     Any Query?
                                 </h3>
                                 <p class="text-white">
-                                    Lorem Ipsum is simply dummy text of the
-                                    printing and typesetting industry. Lorem
-                                    Ipsum has been the.
+                                    Feel free to reach out if you have any questions or need assistance. We're here to help!
                                 </p>
                                 <h4 class="site-text-primary m-b0">
                                     0 321 576 444
@@ -49,12 +47,10 @@ import { getImportedAsset } from '@/utils/assets';
                                     Contact Us
                                 </h3>
                                 <p class="text-white">
-                                    Lorem Ipsum is simply dummy text of the
-                                    printing and typesetting industry. Lorem
-                                    Ipsum has been the.
+                                    If you have any questions or need further information, don’t hesitate to reach out.
                                 </p>
                                 <h4 class="text-secondry m-b0">
-                                    support@bitinvest.com
+                                    support@coindesk.com
                                 </h4>
                             </div>
                         </div>
