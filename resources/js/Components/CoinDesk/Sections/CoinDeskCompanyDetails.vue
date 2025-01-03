@@ -41,13 +41,11 @@ import { getImportedAsset } from '@/utils/assets';
                             >
                         </h2>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit. In a metus pellentesque, scelerisque ex sed,
-                            volutpat nisi. Curabitur tortor mi, eleifend ornare
-                            lobortis non. Nulla porta purus quis iaculis
-                            ultrices. Proin aliquam sem at nibh hendrerit
-                            sagittis. Nullam ornare odio eu lacus tincidunt
-                            malesuada.
+                            Discover the incredible potential of cryptocurrency.
+                            From decentralized networks to secure transactions,
+                            crypto offers unparalleled innovation in the financial world.
+                            It’s reshaping how we think about money, making global transactions
+                            faster, safer, and more efficient than ever before.
                         </p>
                     </div>
                     <div class="row">
