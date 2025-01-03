@@ -43,9 +43,10 @@ import { getImportedAsset } from '@/utils/assets';
                         <p>
                             Discover the incredible potential of cryptocurrency.
                             From decentralized networks to secure transactions,
-                            crypto offers unparalleled innovation in the financial world.
-                            It’s reshaping how we think about money, making global transactions
-                            faster, safer, and more efficient than ever before.
+                            crypto offers unparalleled innovation in the
+                            financial world. It’s reshaping how we think about
+                            money, making global transactions faster, safer, and
+                            more efficient than ever before.
                         </p>
                     </div>
                     <div class="row">
