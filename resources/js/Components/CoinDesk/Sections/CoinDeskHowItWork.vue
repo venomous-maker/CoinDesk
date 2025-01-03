@@ -14,11 +14,7 @@ import { getImportedAsset } from '@/utils/assets';
                 <div class="wt-separator-outer">
                     <div class="wt-separator site-bg-primary"></div>
                 </div>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Fuga eos optio ducimus odit, labore hic fugiat iusto veniam
-                    necessitatibus quas doloremque sapiente maiores.
-                </p>
+                <p>Get started with cryptocurrency in just a few easy steps!</p>
             </div>
             <!-- TITLE END-->
             <div class="section-content">
@@ -47,9 +43,9 @@ import { getImportedAsset } from '@/utils/assets';
                                     Create your wallet
                                 </h4>
                                 <p>
-                                    Lorem Ipsum is simply dummy text of the
-                                    printing and typesg indtrysum has been the
-                                    Ipsum dummy of the printing indus .
+                                    Set up a digital wallet to store your crypto
+                                    assets. It’s a secure and easy way to manage
+                                    your investments.
                                 </p>
                             </div>
                         </div>
@@ -78,9 +74,9 @@ import { getImportedAsset } from '@/utils/assets';
                                     Make payments
                                 </h4>
                                 <p>
-                                    Lorem Ipsum is simply dummy text of the
-                                    printing and typesg indtrysum has been the
-                                    Ipsum dummy of the printing indus .
+                                    Use your wallet to send and receive payments
+                                    quickly and securely. Cryptocurrency
+                                    transactions are fast and efficient.
                                 </p>
                             </div>
                         </div>
@@ -109,9 +105,9 @@ import { getImportedAsset } from '@/utils/assets';
                                     Buy or Sell Orders
                                 </h4>
                                 <p>
-                                    Lorem Ipsum is simply dummy text of the
-                                    printing and typesg indtrysum has been the
-                                    Ipsum dummy of the printing indus .
+                                    Use your wallet to send and receive payments
+                                    quickly and securely. Cryptocurrency
+                                    transactions are fast and efficient.
                                 </p>
                             </div>
                         </div>
