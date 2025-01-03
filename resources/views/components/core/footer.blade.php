@@ -12,8 +12,8 @@
                         <div class="logo-footer clearfix p-b15">
                             <a href="index.html"><img src="{{get_logo(footer: true)}}" width="230" height="67" alt=""/></a>
                         </div>
-                        <p>Thewebmax ipsum dolor sit amet, consectetu adipiscing elit, sed diam nonummy euismod tincidunt ut laoreet dolore agna aliquam erat .
-                            wisi enim ad minim veniam, quis tation. siame, consec tetuer. ipsum dolor sitam, consectetuer adipiscing.ipsum dolor sit.
+                        <p>
+                            We are a leading platform for cryptocurrency trading and investments. We offer secure, fast, and reliable services to help individuals navigate the world of digital assets with ease and confidence.
                         </p>
                     </div>
                 </div>
@@ -178,7 +178,7 @@
         <div class="container p-t30">
             <div class="cpr-ftr-section">
                 <div class="wt-footer-bot-left">
-                    <span class="copyrights-text">© 2023 Your Company. All Rights Reserved. Designed By thewebmax.</span>
+                    <span class="copyrights-text">© {{now()->year}} Your Company. All Rights Reserved. Designed By thewebmax.</span>
                 </div>
                 <div class="wt-footer-bot-right">
                     <ul class="copyrights-nav pull-right">
