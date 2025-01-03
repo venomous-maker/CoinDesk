@@ -212,14 +212,7 @@ $user = auth()->user();
         <!-- CONTENT START -->
         <div class="page-content">
             <!-- BREADCRUMB ROW -->
-            <div class="bg-gray-light p-tb20">
-                <div class="container">
-                    <ul class="wt-breadcrumb breadcrumb-style-2">
-                        <li><a href="javascript:void(0);"><i class="fa fa-home"></i> Home</a></li>
-                        <li>{{isset($pageName) ? $pageName : "Unknown"}}</li>
-                    </ul>
-                </div>
-            </div>
+            <coin-desk-bread-crumb-row page-title="{{isset($pageName) ? $pageName : "Unknown"}}"></coin-desk-bread-crumb-row>
             <!-- BREADCRUMB  ROW END -->
             @yield('content')
             <!-- SECTION CONTENT END -->
