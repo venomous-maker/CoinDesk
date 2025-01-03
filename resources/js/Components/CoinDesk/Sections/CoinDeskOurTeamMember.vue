@@ -15,9 +15,19 @@ import { getImportedAsset } from '@/utils/assets';
                     <div class="wt-separator site-bg-primary"></div>
                 </div>
                 <p>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s.
+                    Our team of expert consultants brings years of experience in
+                    the world of cryptocurrency and blockchain technology. We
+                    specialize in helping individuals and businesses navigate
+                    the complexities of Bitcoin and other cryptocurrencies.
+                    Whether you are new to Bitcoin or looking to deepen your
+                    understanding, our consultants provide personalized guidance
+                    tailored to your needs. With a deep understanding of the
+                    financial landscape and the technological advancements
+                    behind cryptocurrencies, we ensure that our clients are
+                    equipped to make informed decisions. From wallet setup and
+                    security to investment strategies and market insights, our
+                    consultants are here to assist you at every step of your
+                    Bitcoin journey.
                 </p>
             </div>
             <!-- TITLE END -->

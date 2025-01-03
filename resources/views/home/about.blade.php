@@ -31,15 +31,17 @@
                         <span class="wt-title-subline text-gray-dark font-16 m-b15">What is bitcoin</span>
                         <h2 class="text-uppercase">A New Kind of Money </h2>
                         <div class="wt-separator-outer"><div class="wt-separator site-bg-primary"></div></div>
-                        <p><strong>Bitcoin is the world's first advanced decentralized cash and installment organize. Nullam non magna in diam ultricies hendrerit at nec ligula. </strong></p>
+                        <p><strong>Bitcoin is the world’s first decentralized digital currency, enabling peer-to-peer transactions without the need for intermediaries like banks. It operates on a blockchain network, ensuring transparency, security, and immutability. </strong></p>
                         <p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry and Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. remaining essentially unchanged.
+                            Unlike traditional currencies issued by governments, Bitcoin is decentralized, meaning it is not controlled by any central authority. Its value is determined by market demand and supply, and it can be used for a wide range of financial activities, including investment, transactions, and even remittances.
+                            <br />
+                            As the first cryptocurrency, Bitcoin has revolutionized the way we think about money, providing users with greater control over their finances while offering a secure and efficient method of transferring value across borders.
                         </p>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 m-b30">
                     <div class="wt-media">
-                        <img src="images/gallery/pic3.jpg" alt="" class="img-responsive"/>
+                        <img src="{{get_imported_asset('images/gallery/pic3.jpg')}}" alt="" class="img-responsive"/>
                     </div>
                 </div>
             </div>
@@ -48,99 +50,7 @@
     <!-- ABOUT COMPANY SECTION END -->
 
     <!-- WHY CHOOSE US SECTION START  -->
-    <div class="section-full  p-t80 p-b50 bg-gray">
-        <div class="container">
-            <!-- TITLE START-->
-            <div class="section-head text-center">
-                <span class="wt-title-subline font-16 text-gray-dark m-b15">Buy and Sell Bitcoin</span>
-                <h2 class="text-uppercase">Why Choose Bitcoin</h2>
-                <div class="wt-separator-outer">
-                    <div class="wt-separator site-bg-primary"></div>
-                </div>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-            </div>
-            <!-- TITLE END-->
-            <div class="section-content">
-                <div class="row">
-
-                    <!-- COLUMNS 1 -->
-                    <div class="col-lg-4 col-md-6 m-b30 animate_line">
-                        <div class="wt-icon-box-wraper  p-a30 center bg-white m-a5">
-                            <div class="icon-lg site-text-primary m-b20">
-                                <a href="#" class="icon-cell"><img src="images/icon/pick-29.png" alt=""></a>
-                            </div>
-                            <div class="icon-content">
-                                <h4 class="wt-tilte text-uppercase font-weight-500">Instant Trading</h4>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesg indtrysum has been the Ipsum dummy of the printing indus .</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- COLUMNS 2 -->
-                    <div class="col-lg-4 col-md-6 m-b30 animate_line">
-                        <div class="wt-icon-box-wraper  p-a30 center bg-white m-a5">
-                            <div class="icon-lg site-text-primary m-b20">
-                                <a href="#" class="icon-cell"><img src="images/icon/pick-28.png" alt=""></a>
-                            </div>
-                            <div class="icon-content ">
-                                <h4 class="wt-tilte text-uppercase font-weight-500">Recurring Buying</h4>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesg indtrysum has been the Ipsum dummy of the printing indus .</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- COLUMNS 3 -->
-                    <div class="col-lg-4 col-md-6 m-b30 animate_line">
-                        <div class="wt-icon-box-wraper  p-a30 center bg-white m-a5">
-                            <div class="icon-lg site-text-primary m-b20">
-                                <a href="#" class="icon-cell"><img src="images/icon/pick-17.png" alt=""></a>
-                            </div>
-                            <div class="icon-content">
-                                <h4 class="wt-tilte text-uppercase font-weight-500">Safe and Secure</h4>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesg indtrysum has been the Ipsum dummy of the printing indus .</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- COLUMNS 4 -->
-                    <div class="col-lg-4 col-md-6 m-b30 animate_line">
-                        <div class="wt-icon-box-wraper  p-a30 center bg-white m-a5">
-                            <div class="icon-lg site-text-primary m-b20">
-                                <a href="#" class="icon-cell"><img src="images/icon/pick-19.png" alt=""></a>
-                            </div>
-                            <div class="icon-content">
-                                <h4 class="wt-tilte text-uppercase font-weight-500">Investment Planning</h4>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesg indtrysum has been the Ipsum dummy of the printing indus .</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- COLUMNS 5 -->
-                    <div class="col-lg-4 col-md-6 m-b30 animate_line">
-                        <div class="wt-icon-box-wraper  p-a30 center bg-white m-a5">
-                            <div class="icon-lg site-text-primary m-b20">
-                                <a href="#" class="icon-cell"><img src="images/icon/pick-12.png" alt=""></a>
-                            </div>
-                            <div class="icon-content">
-                                <h4 class="wt-tilte text-uppercase font-weight-500">Covered By Insurance</h4>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesg indtrysum has been the Ipsum dummy of the printing indus .</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- COLUMNS 6 -->
-                    <div class="col-lg-4 col-md-6 m-b30 animate_line">
-                        <div class="wt-icon-box-wraper  p-a30 center bg-white m-a5">
-                            <div class="icon-lg site-text-primary m-b20">
-                                <a href="#" class="icon-cell"><img src="images/icon/pick-38.png" alt=""></a>
-                            </div>
-                            <div class="icon-content">
-                                <h4 class="wt-tilte text-uppercase font-weight-500">Bitcoin Transaction</h4>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesg indtrysum has been the Ipsum dummy of the printing indus .</p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
-    </div>
+    <coin-desk-why-choose-us></coin-desk-why-choose-us>
     <!-- WHY CHOOSE US SECTION END -->
 
     <!-- SECTION CONTENT -->
@@ -183,90 +93,8 @@
     </div>
     <!-- SECTION CONTENT END -->
 
+
     <!-- OUR TEAM MEMBER SECTION START -->
-    <div class="section-full text-center wt-our-team bg-gray p-t80 p-b50">
-        <div class="container">
-
-            <!-- TITTLE START -->
-            <div class="section-head text-center">
-                <span class="wt-title-subline font-16 text-gray-dark m-b15">Three steps bticoin</span>
-                <h2 class="text-uppercase">Our Consultants</h2>
-                <div class="wt-separator-outer">
-                    <div class="wt-separator site-bg-primary"></div>
-                </div>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-            </div>
-            <!-- TITLE END -->
-
-            <div class="section-content">
-                <div class="row d-flex justify-content-center">
-
-                    <!-- COLUMNS 1 -->
-                    <div class="col-lg-4 col-md-6 col-sm-6 m-b30">
-                        <div class="wt-team-one bg-white">
-                            <div class="wt-team-media">
-                                <a href="javascript:void(0);"><img src="images/our-team/pic1.jpg"  class="" alt=""></a>
-                            </div>
-                            <div class="wt-team-info text-center bg-white p-a20">
-                                <h4 class="wt-team-title"><a href="javascript:void(0);">Richard Wagner</a></h4>
-                                <p>Consultant</p>
-                                <ul class="social-icons social-square social-dark m-b0">
-                                    <li><a href="javascript:void(0);" class="fa fa-facebook"></a></li>
-                                    <li><a href="javascript:void(0);" class="fa fa-twitter"></a></li>
-                                    <li><a href="javascript:void(0);" class="fa fa-linkedin"></a></li>
-                                    <li><a href="javascript:void(0);" class="fa fa-rss"></a></li>
-                                    <li><a href="javascript:void(0);" class="fa fa-youtube"></a></li>
-                                    <li><a href="javascript:void(0);" class="fa fa-instagram"></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- COLUMNS 2 -->
-                    <div class="col-lg-4 col-md-6 col-sm-6 m-b30">
-                        <div class="wt-team-one bg-white">
-                            <div class="wt-team-media ">
-                                <a href="javascript:void(0);"><img src="images/our-team/pic2.jpg" alt=""></a>
-                            </div>
-                            <div class="wt-team-info text-center bg-white p-a20">
-                                <h4 class="wt-team-title"><a href="javascript:void(0);">Lisa Anderson</a></h4>
-                                <p>Ceo & Founder</p>
-                                <ul class="social-icons social-square social-dark m-b0">
-                                    <li><a href="javascript:void(0);" class="fa fa-facebook"></a></li>
-                                    <li><a href="javascript:void(0);" class="fa fa-twitter"></a></li>
-                                    <li><a href="javascript:void(0);" class="fa fa-linkedin"></a></li>
-                                    <li><a href="javascript:void(0);" class="fa fa-rss"></a></li>
-                                    <li><a href="javascript:void(0);" class="fa fa-youtube"></a></li>
-                                    <li><a href="javascript:void(0);" class="fa fa-instagram"></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- COLUMNS 3 -->
-                    <div class="col-lg-4 col-md-6 col-sm-6 m-b30">
-                        <div class="wt-team-one  bg-white">
-                            <div class="wt-team-media">
-                                <a href="javascript:void(0);"><img src="images/our-team/pic3.jpg" alt=""></a>
-                            </div>
-                            <div class="wt-team-info text-center bg-white p-a20">
-                                <h4 class="wt-team-title"><a href="javascript:void(0);">Tommy Atkins</a></h4>
-                                <p>Manager</p>
-                                <ul class="social-icons social-square social-dark m-b0">
-                                    <li><a href="javascript:void(0);" class="fa fa-facebook"></a></li>
-                                    <li><a href="javascript:void(0);" class="fa fa-twitter"></a></li>
-                                    <li><a href="javascript:void(0);" class="fa fa-linkedin"></a></li>
-                                    <li><a href="javascript:void(0);" class="fa fa-rss"></a></li>
-                                    <li><a href="javascript:void(0);" class="fa fa-youtube"></a></li>
-                                    <li><a href="javascript:void(0);" class="fa fa-instagram"></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-
-        </div>
-    </div>
+    <coin-desk-our-team-member></coin-desk-our-team-member>
     <!-- OUR TEAM MEMBER SECTION END -->
 @endsection
