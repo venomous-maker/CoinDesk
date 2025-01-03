@@ -264,9 +264,10 @@ onMounted(() => {
                                         style="
                                             font-family: 'Poppins', sans-serif;
                                         "
-                                        >Lorem Ipsum is simply dummy text of the
-                                        printing and typesetting industry. Lorem
-                                        Ipsum has been end</span
+                                        >Discover the simplest way to trade
+                                        Bitcoin. Seamless transactions, low
+                                        fees, and reliable support for all your
+                                        trading needs.</span
                                     >
                                 </div>
 
@@ -635,9 +636,10 @@ onMounted(() => {
                                         style="
                                             font-family: 'Poppins', sans-serif;
                                         "
-                                        >Lorem Ipsum is simply dummy text of the
-                                        printing and typesetting industry. Lorem
-                                        Ipsum has been end</span
+                                        >Invest in Bitcoin with confidence.
+                                        Enjoy a secure platform, real-time data,
+                                        and user-friendly tools for smart,
+                                        effortless trading.</span
                                     >
                                 </div>
 
@@ -1098,9 +1100,10 @@ onMounted(() => {
                                         style="
                                             font-family: 'Poppins', sans-serif;
                                         "
-                                        >Lorem Ipsum is simply dummy text of the
-                                        printing and typesetting industry. Lorem
-                                        Ipsum has been end</span
+                                        >Trade Bitcoin effortlessly with a
+                                        platform designed for speed, security,
+                                        and simplicity—your gateway to a smarter
+                                        financial future.</span
                                     >
                                 </div>
 
