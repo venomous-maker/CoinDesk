@@ -25,8 +25,8 @@
             <a href="javascript:;">Finance<i class="fa fa-chevron-down"></i></a>
             <ul class="sub-menu">
                 <li><a href="{{route('trade.trading')}}">Trading</a></li>
-                <li><a href="index-2.html">Perpetual</a></li>
-                <li><a href="index-3.html">Spot</a></li>
+                <li><a href="/finance/assets">Assets</a></li>
+                <li><a href="/finance/ai-quantization">Ai Quantization</a></li>
             </ul>
         </li>
         <li>
