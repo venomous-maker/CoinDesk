@@ -36,7 +36,6 @@ export default defineComponent({
 
 <template>
     <coin-desk-main-wrapper :with-space="false">
-        <StockMarket/>
         <MiniChart></MiniChart>
         <Screener
             :options="{
