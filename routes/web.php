@@ -1,7 +1,6 @@
 <?php
 
 
-use App\Http\Controllers\FinanceController;
 
 use App\Http\Controllers\Finance\FinanceController;
 
