@@ -30,19 +30,19 @@
                 <div class="fundamental-data">
                     <FundamentalData
                         :options="{
-                    largeChartUrl: route('trade.trading'),
-                    colorTheme: 'dark',
-                    symbol: symbol,
-                    height: 750,
-                    width: 400,
-                }"
+                            largeChartUrl: route('trade.trading'),
+                            colorTheme: 'dark',
+                            symbol: symbol,
+                            height: 750,
+                            width: 400,
+                        }"
                     />
                 </div>
 
                 <!-- Coin Desk Open Position Component -->
                 <div class="coin-desk-open-position">
-                    <div style="width: 610px; height: 750px;">
-                    <coin-desk-open-position />
+                    <div style="width: 610px; height: 750px">
+                        <coin-desk-open-position />
                     </div>
                 </div>
             </div>
@@ -54,6 +54,7 @@
 import { defineComponent } from 'vue';
 // Lets ingnore build check here to avoid errors
 // @ts-ignore
+import CoinDeskOpenPosition from '@/Components/CoinDesk/Sections/CoinDeskOpenPosition.vue';
 import {
     Chart,
     CryptoMarket,
@@ -61,7 +62,6 @@ import {
     Screener,
     Snaps,
 } from 'vue-tradingview-widgets';
-import CoinDeskOpenPosition from '@/Components/CoinDesk/Sections/CoinDeskOpenPosition.vue';
 
 export default defineComponent({
     props: {

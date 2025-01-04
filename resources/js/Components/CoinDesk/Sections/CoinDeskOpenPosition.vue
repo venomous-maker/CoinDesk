@@ -1,3 +1,60 @@
+<script lang="ts">
+import CoinDeskWithdrawModal from '../CoinDeskWithdrawModal.vue';
+
+export default {
+    data() {
+        return {
+            position: {
+                market: 'limit',
+                availableAmount: 0,
+                buyingPrice: '',
+                leverage: '100X',
+                quantity: '',
+                takePnL: false,
+            },
+            leverageOptions: ['10', '25', '50', '100'],
+            depositModal: false,
+            withdrawModal: false,
+        };
+    },
+    methods: {
+        setPercentage(percent: number) {
+            const total = this.position.availableAmount;
+            this.position.quantity = ((percent / 100) * total).toFixed(2);
+        },
+        calculateMargin() {
+            const price = parseFloat(this.position.buyingPrice) || 0;
+            const quantity = parseFloat(this.position.quantity) || 0;
+            return (price * quantity).toFixed(2);
+        },
+        buyLong() {
+            console.log('Buy Long', this.position);
+        },
+        buyShort() {
+            console.log('Buy Short', this.position);
+        },
+        handleSubmit() {
+            console.log('Form Submitted', this.position);
+        },
+        handlePosition(type: string) {
+            this.position.market = type;
+        },
+        openDepositModal() {
+            this.depositModal = true;
+        },
+        closeDepositModal() {
+            this.depositModal = false;
+        },
+        openWithdrawModal() {
+            this.withdrawModal = true;
+        },
+        closeWithdrawModal() {
+            this.withdrawModal = false;
+        },
+    },
+};
+</script>
+
 <template>
     <div class="open-position">
         <h3>Open Position</h3>
@@ -100,50 +157,31 @@
                     Buy Short
                 </button>
             </div>
+            <div class="tw-mt-3 tw-space-y-3">
+                <button
+                    @click="openDepositModal"
+                    class="tw-bg-sky-500 hover:tw-bg-sky-600 tw-p-3 tw-rounded-md btn tw-w-full"
+                >
+                    Deposit
+                </button>
+                <button
+                    @click="openWithdrawModal()"
+                    class="btn tw-bg-lime-500 hover:tw-bg-lime-600 tw-rounded-md tw-w-full"
+                >
+                    Withdraw
+                </button>
+            </div>
         </form>
+        <CoinDeskDepositModal
+            :is-open="depositModal"
+            @close="closeDepositModal()"
+        />
+        <CoinDeskWithdrawModal
+            :is-open="withdrawModal"
+            @close="closeWithdrawModal()"
+        />
     </div>
 </template>
-
-<script lang="ts">
-export default {
-    data() {
-        return {
-            position: {
-                market: 'limit',
-                availableAmount: 0,
-                buyingPrice: '',
-                leverage: '100X',
-                quantity: '',
-                takePnL: false,
-            },
-            leverageOptions: ['10', '25', '50', '100'],
-        };
-    },
-    methods: {
-        setPercentage(percent: number) {
-            const total = this.position.availableAmount;
-            this.position.quantity = ((percent / 100) * total).toFixed(2);
-        },
-        calculateMargin() {
-            const price = parseFloat(this.position.buyingPrice) || 0;
-            const quantity = parseFloat(this.position.quantity) || 0;
-            return (price * quantity).toFixed(2);
-        },
-        buyLong() {
-            console.log('Buy Long', this.position);
-        },
-        buyShort() {
-            console.log('Buy Short', this.position);
-        },
-        handleSubmit() {
-            console.log('Form Submitted', this.position);
-        },
-        handlePosition(type: string) {
-            this.position.market = type;
-        },
-    },
-};
-</script>
 
 <style scoped>
 h3 {
