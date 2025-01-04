@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Finance\FinanceController;
 use App\Http\Controllers\Home\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Trade\TradingController;
@@ -22,6 +23,12 @@ Route::prefix('/home')->name('home.')->group(function (){
 Route::prefix('/markets')->name('market.')->group(function (){
     Route::get('/index', [MarketController::class, 'index'])->name('index');
 });
+
+Route::prefix('/finance')->name('finance.')->group(function (){
+    Route::get('/index', [FinanceController::class, 'index'])->name('index');
+    Route::get('/ai-quantization', [FinanceController::class, 'aiQuantization'])->name('ai-quantization');
+});
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

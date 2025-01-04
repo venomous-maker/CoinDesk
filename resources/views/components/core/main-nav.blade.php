@@ -27,6 +27,7 @@
                 <li><a href="{{route('trade.trading')}}">Trading</a></li>
                 <li><a href="index-2.html">Perpetual</a></li>
                 <li><a href="index-3.html">Spot</a></li>
+                <li><a href="{{route('finance.ai-quantization')}}">AI Quantization</a></li>
             </ul>
         </li>
         <li>
