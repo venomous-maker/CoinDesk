@@ -1,5 +1,5 @@
 <script setup lang="ts">
-
+import { getImportedAsset } from '@/utils/assets';
 </script>
 
 <template>
@@ -8,7 +8,13 @@
         <div class="loading-box"></div>
         <div class="loading-pic">
             <div class="cssload-container">
-                <div class="cssload-dot site-bg-primary"><i class="fa fa-bitcoin"></i></div>
+                <div class="cssload-dot site-bg-primary">
+                    <img
+                        :src="
+                            getImportedAsset('images/logo/coindesk_black.png')
+                        "
+                    />
+                </div>
                 <div class="step" id="cssload-s1"></div>
                 <div class="step" id="cssload-s2"></div>
                 <div class="step" id="cssload-s3"></div>
@@ -18,6 +24,4 @@
     <!-- LOADING AREA  END ====== -->
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
