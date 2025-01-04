@@ -4,6 +4,7 @@ import './bootstrap';
 import { createApp, DefineComponent, h } from 'vue';
 import { ZiggyVue } from '../../vendor/tightenco/ziggy';
 import { getImportedAsset } from './utils/assets';
+import { Ziggy } from './ziggy';
 
 window.getImportedAsset = getImportedAsset;
 
@@ -30,4 +31,4 @@ Object.keys(components).forEach((fileName) => {
 });
 
 // // Mount the app
-app.mount('#app');
+app.use(ZiggyVue, Ziggy).mount('#app');

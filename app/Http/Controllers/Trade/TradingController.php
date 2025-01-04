@@ -10,7 +10,8 @@ class TradingController extends Controller
 {
     public function index(Request $request){
         $pageName = 'Trading';
-        return view('trade.trading', compact(['pageName']));
+        $symbol = $request->query('tvwidgetsymbol') ?? "BITSTAMP:BTCUSD";
+        return view('trade.trading', compact(['pageName', 'symbol']));
     }
 
 }

@@ -33,6 +33,7 @@
     "dependencies": {
         "lightweight-charts": "^4.2.2",
         "trading-charts": "github:adrianmanchev/trading-charts",
-        "vue-tradingview-widgets": "^1.2.4"
+        "vue-tradingview-widgets": "^1.2.4",
+        "ziggy-js": "^2.4.2"
     }
 }
