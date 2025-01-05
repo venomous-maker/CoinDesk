@@ -17,6 +17,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::prefix('/trade')->name('trade.')->group(function (){
     Route::get('/trading', [TradingController::class, 'index'])->name('trading');
     Route::get('/perpetual', [TradingController::class, 'perpetual'])->name('perpetual');
+    Route::get('/spot', [TradingController::class, 'spot'])->name('spot');
 });
 
 Route::prefix('/home')->name('home.')->group(function (){
