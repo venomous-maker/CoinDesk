@@ -20,4 +20,10 @@ class TradingController extends Controller
         return view('trade.trading', compact(['pageName', 'symbol']));
     }
 
+    public function spot(Request $request){
+        $pageName = 'Spot';
+        $symbol = $request->query('tvwidgetsymbol') ?? "BITSTAMP:BTCUSD";
+        return view('trade.spot', compact(['pageName', 'symbol']));
+    }
+
 }
