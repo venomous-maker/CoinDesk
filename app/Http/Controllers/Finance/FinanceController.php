@@ -12,10 +12,11 @@ class FinanceController extends Controller
      */
     public function assets()
     {
-        return view('finance.assets');
+        $pageName = 'Assets';
+        return view('finance.assets', compact('pageName'));
     }
     /**
-     * @return View
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Foundation\Application
      */
     public function aiQuantization(){
         $pageName = 'AI Quantization';
