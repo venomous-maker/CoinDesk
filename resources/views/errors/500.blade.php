@@ -1,15 +1,5 @@
 @extends('layouts.page')
 @section('content')
-    <!-- BREADCRUMB ROW -->
-    <div class="bg-gray-light p-tb20">
-        <div class="container">
-            <ul class="wt-breadcrumb breadcrumb-style-2">
-                <li><a href="{{ route('home') }}">Home</a></li>
-                <li>Error 500</li>
-            </ul>
-        </div>
-    </div>
-    <!-- BREADCRUMB ROW END -->
 
     <!-- SECTION CONTENT -->
     <div class="section-full p-t80 p-b50">
