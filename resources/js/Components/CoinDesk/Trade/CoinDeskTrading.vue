@@ -1,6 +1,6 @@
 <template>
     <div class="bg-black">
-        <CryptoMarket :options="{ theme: theme }" />
+        <SymbolInfo :options="{symbol: symbol, colorTheme: theme, width: '100%'}"></SymbolInfo>
         <div class="trading-container">
             <div class="chart-container">
                 <Chart
@@ -57,10 +57,10 @@ import { defineComponent } from 'vue';
 import CoinDeskOpenPosition from '@/Components/CoinDesk/Sections/CoinDeskOpenPosition.vue';
 import {
     Chart,
-    CryptoMarket,
     FundamentalData,
     Screener,
     Snaps,
+    SymbolInfo
 } from 'vue-tradingview-widgets';
 
 export default defineComponent({
@@ -77,11 +77,11 @@ export default defineComponent({
     name: 'App',
     components: {
         Chart,
-        CryptoMarket,
         Screener,
         Snaps,
         FundamentalData,
         CoinDeskOpenPosition,
+        SymbolInfo
     },
 });
 </script>

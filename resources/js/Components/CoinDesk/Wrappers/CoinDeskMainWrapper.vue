@@ -21,7 +21,7 @@ defineProps({
 
         <br />
     </div>
-    <div v-if="!withSpace">
+    <div v-if="!withSpace" class="bg-black">
         <slot></slot>
     </div>
 </template>
