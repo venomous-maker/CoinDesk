@@ -1,6 +1,23 @@
+<?php
+    // Define patterns to exempt all auth-related routes
+    $exemptPatterns = [
+        '/^auth\./',      // Matches routes like 'auth.*'
+        '/^login$/',      // Matches 'login' route
+        '/^register$/',   // Matches 'register' route
+        '/^password\./'   // Matches routes like 'password.*'
+        ,
+        '/^verification\./',
+        '/^storage\./',
+        '/^sanctum\./'
+    ];
+    // Fetch all routes and pass them to the menu builder
+    $routes = Route::getRoutes()->getRoutesByName();
+    $menuHtml = buildDynamicMenu($routes, $exemptPatterns);
+?>
 <!-- MAIN Vav -->
 <div class="header-nav navbar-collapse collapse ">
     <ul class=" nav navbar-nav">
+{{--        {!! $menuHtml !!}--}}
         <li class="active">
             <a href="{{route('home')}}">Home<i class="fa "></i></a>
         </li>
@@ -17,7 +34,7 @@
             <a href="javascript:;">Trade<i class="fa fa-chevron-down"></i></a>
             <ul class="sub-menu">
                 <li><a href="{{route('trade.trading')}}">Trading</a></li>
-                <li><a href="index-2.html">Perpetual</a></li>
+                <li><a href="{{route('trade.perpetual')}}">Perpetual</a></li>
                 <li><a href="index-3.html">Spot</a></li>
             </ul>
         </li>
@@ -26,7 +43,7 @@
             <ul class="sub-menu">
                 <li><a href="{{route('trade.trading')}}">Trading</a></li>
 
-                <li><a href="/finance/assets">Assets</a></li>
+                <li><a href="{{ route('finance.assets') }}">Assets</a></li>
                 <li><a href="{{route('finance.ai-quantization')}}">Ai Quantization</a></li>
 
             </ul>
