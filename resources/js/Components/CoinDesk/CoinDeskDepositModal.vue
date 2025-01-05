@@ -261,8 +261,37 @@ const currencies: Currency[] = [
         name: 'USDT',
         icon: 'https://static-00.iconduck.com/assets.00/tether-cryptocurrency-icon-2048x2048-dp13oydi.png',
     },
-];
-const selectedCurrency = ref(currencies[0]);
+    {
+        id: 'eth',
+        name: 'ETH',
+        icon: 'https://cryptologos.cc/logos/ethereum-eth-logo.png',
+    },
+    {
+        id: 'btc',
+        name: 'BTC',
+        icon: 'https://cryptologos.cc/logos/bitcoin-btc-logo.png',
+    },
+    {
+        id: 'usdc',
+        name: 'USDC',
+        icon: 'https://cryptologos.cc/logos/usd-coin-usdc-logo.png',
+    },
+    {
+        id: 'dai',
+        name: 'DAI',
+        icon: 'https://cryptologos.cc/logos/multi-collateral-dai-dai-logo.png',
+    },
+    {
+        id: 'shib',
+        name: 'SHIB',
+        icon: 'https://cryptologos.cc/logos/shiba-inu-shib-logo.png',
+    },
+    {
+        id: 'xrp',
+        name: 'XRP',
+        icon: 'https://cryptologos.cc/logos/xrp-xrp-logo.png',
+    }
+];const selectedCurrency = ref(currencies[0]);
 
 // Methods
 const closeModal = () => {
