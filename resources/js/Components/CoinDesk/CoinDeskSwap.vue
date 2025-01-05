@@ -206,7 +206,7 @@ const selectSwapToCurrency = (currency: Currency) => {
                                 class="tw-w-full tw-rounded-lg tw-border tw-border-gray-700 tw-bg-gray-800 tw-p-3 tw-text-white"
                             />
                         </div>
-                        <div class="tw-mt-4">
+                        <div class="tw-mt-2">
                             <!-- Submit Button -->
                             <button
                                 class="tw-w-full tw-rounded-lg tw-bg-cyan-500 tw-py-3 tw-text-black tw-transition-colors hover:tw-bg-cyan-400"
@@ -214,7 +214,7 @@ const selectSwapToCurrency = (currency: Currency) => {
                                 Transfer
                             </button>
                         </div>
-                        <div class="tw-mt-4">
+                        <div>
                             <!-- Submit Button -->
                             <button
                                 @click="$emit('close')"
