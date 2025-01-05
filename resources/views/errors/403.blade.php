@@ -10,7 +10,7 @@
                         <div class="page-notfound text-center">
                             <form method="post">
                                 <strong class="text-uppercase">Error</strong>
-                                <strong>4<i class="fa fa-frown-o site-text-primary"></i>3</strong>
+                                <strong>4<i class="fa fa-frown-open site-text-primary"></i>3</strong>
                                 <span>Access Forbidden</span>
                                 <a href="{{route('home')}}" class="site-button ">GO TO HOME  <i class="fa fa-angle-double-right"></i></a>
                             </form>
