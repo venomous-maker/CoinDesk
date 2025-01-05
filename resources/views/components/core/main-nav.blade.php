@@ -35,7 +35,7 @@
             <ul class="sub-menu">
                 <li><a href="{{route('trade.trading')}}">Trading</a></li>
                 <li><a href="{{route('trade.perpetual')}}">Perpetual</a></li>
-                <li><a href="index-3.html">Spot</a></li>
+                <li><a href="{{route('trade.spot')}}">Spot</a></li>
             </ul>
         </li>
         <li>
