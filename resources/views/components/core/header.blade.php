@@ -10,7 +10,7 @@
             <div class="container">
 
                 <div class="logo-header mostion">
-                    <a href="index.html">
+                    <a href="{{ route('home') }}">
                         <img src="{{ get_logo()}}" width="230" height="67" alt="" />
                     </a>
                 </div>

@@ -7,6 +7,13 @@ import { createApp } from 'vue';
 import { ZiggyVue } from '../../vendor/tightenco/ziggy';
 import { getImportedAsset } from './utils/assets';
 import { Ziggy } from './ziggy';
+import Vuetify from 'vuetify';
+import 'vuetify/dist/vuetify.min.css'; // Import the CSS
+
+// Import Vuetify styles and FontAwesome (for icons)
+import { createVuetify } from 'vuetify';
+import '@mdi/font/css/materialdesignicons.css'; // Ensure icons are loaded
+import 'vuetify/styles'; // Global Vuetify styles
 
 window.getImportedAsset = getImportedAsset;
 
@@ -31,6 +38,12 @@ Object.keys(components).forEach((fileName) => {
         app.component(componentName, components[fileName].default);
     }
 });
-
+// Create Vuetify instance and configure it
+const vuetify = createVuetify({
+    // Add Vuetify options here if needed
+    icons: {
+        defaultSet: 'fa', // Use Font Awesome
+    },
+});
 // // Mount the app
 app.use(ZiggyVue, Ziggy).mount('#app');

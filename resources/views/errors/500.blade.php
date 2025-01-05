@@ -12,7 +12,7 @@
                         <div class="page-notfound text-center">
                             <form method="post">
                                 <strong class="text-uppercase">Error</strong>
-                                <strong>5<i class="fa fa-frown-o site-text-primary"></i><i class="fa fa-frown-o site-text-primary"></i></strong>
+                                <strong>5<i class="fa fa-frown-oopen site-text-primary"></i><i class="fa fa-frown-o site-text-primary"></i></strong>
                                 <span>Internal Error</span>
                                 <a href="{{ route('home') }}" class="site-button ">GO TO HOME  <i class="fa fa-angle-double-right"></i></a>
                             </form>

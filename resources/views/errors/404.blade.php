@@ -12,7 +12,7 @@
                         <div class="page-notfound text-center">
                             <form method="post">
                                 <strong class="text-uppercase">Error</strong>
-                                <strong>4<i class="fa fa-frown-o site-text-primary"></i>4</strong>
+                                <strong>4<i class="fa fa-face-frown-open site-text-primary"></i>4</strong>
                                 <span>Page not found</span>
                                 <a href="{{ route('home') }}" class="site-button ">GO TO HOME  <i class="fa fa-angle-double-right"></i></a>
                             </form>
