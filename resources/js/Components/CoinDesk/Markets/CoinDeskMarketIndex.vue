@@ -47,7 +47,6 @@ export default defineComponent({
 
 <template>
     <coin-desk-main-wrapper :with-space="false">
-        <coin-desk-market-card-container />
         <div class="widget-container">
             <MiniChart
                 :options="{
