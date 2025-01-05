@@ -14,4 +14,10 @@ class TradingController extends Controller
         return view('trade.trading', compact(['pageName', 'symbol']));
     }
 
+    public function perpetual(Request $request){
+        $pageName = 'Perpetual';
+        $symbol = $request->query('tvwidgetsymbol') ?? "BITSTAMP:BTCUSD";
+        return view('trade.trading', compact(['pageName', 'symbol']));
+    }
+
 }
