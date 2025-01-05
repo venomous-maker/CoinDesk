@@ -42,8 +42,6 @@
             <a href="javascript:;">Finance<i class="fa fa-chevron-down"></i></a>
             <ul class="sub-menu">
                 <li><a href="{{ route('finance.assets') }}">Assets</a></li>
-                <li><a href="{{ route('finance.defi-loan') }}">DeFi Loan</a></li>
-                <li><a href="{{route('finance.credit-lending')}}">Credit Lending</a></li>
                 <li><a href="{{route('finance.ai-quantization')}}">Ai Quantization</a></li>
 
             </ul>

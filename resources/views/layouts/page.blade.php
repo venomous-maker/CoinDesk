@@ -212,7 +212,7 @@ $user = auth()->user();
         <!-- CONTENT START -->
         <div class="page-content">
             <!-- BREADCRUMB ROW -->
-            <coin-desk-bread-crumb-row page-title="{{isset($pageName) ? $pageName : "Unknown"}}"></coin-desk-bread-crumb-row>
+            <!-- <coin-desk-bread-crumb-row page-title="{{isset($pageName) ? $pageName : "Unknown"}}"></coin-desk-bread-crumb-row> -->
             <!-- BREADCRUMB  ROW END -->
             @yield('content')
             <!-- SECTION CONTENT END -->
