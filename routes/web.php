@@ -16,6 +16,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::prefix('/trade')->name('trade.')->group(function (){
     Route::get('/trading', [TradingController::class, 'index'])->name('trading');
+    Route::get('/perpetual', [TradingController::class, 'perpetual'])->name('perpetual');
 });
 
 Route::prefix('/home')->name('home.')->group(function (){
@@ -30,6 +31,7 @@ Route::prefix('/markets')->name('market.')->group(function (){
 Route::prefix('/finance')->name('finance.')->group(function (){
     Route::get('/index', [FinanceController::class, 'index'])->name('index');
     Route::get('/ai-quantization', [FinanceController::class, 'aiQuantization'])->name('ai-quantization');
+    Route::get("/assets", [FinanceController::class, "assets"])->name('assets');
 });
 
 Route::get('/dashboard', function () {
@@ -41,5 +43,4 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-Route::get("/finance/assets", [FinanceController::class, "assets"]);
 require __DIR__.'/auth.php';
