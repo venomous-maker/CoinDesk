@@ -3,14 +3,14 @@
         <Transition name="modal">
             <div
                 v-if="isOpen"
-                class="tw-bg-black/80 tw-fixed tw-inset-0 tw-z-50 tw-flex tw-items-center tw-justify-center tw-overflow-y-auto"
+                class="tw-fixed tw-inset-0 tw-z-50 tw-flex tw-items-center tw-justify-center tw-overflow-y-auto tw-bg-black/80"
             >
                 <div
-                    class="tw-bg-gray-900 tw-w-full tw-max-w-2xl tw-rounded-lg tw-overflow-hidden"
+                    class="tw-w-full tw-max-w-2xl tw-overflow-hidden tw-rounded-lg tw-bg-gray-900"
                 >
                     <!-- Header -->
                     <div
-                        class="tw-p-4 tw-border-b tw-border-gray-800 tw-flex tw-items-center"
+                        class="tw-flex tw-items-center tw-border-b tw-border-gray-800 tw-p-4"
                     >
                         <button
                             @click="closeModal"
@@ -19,7 +19,7 @@
                             <ArrowLeftIcon class="tw-h-6 tw-w-6" />
                         </button>
                         <h2
-                            class="tw-text-xl tw-font-semibold tw-text-white tw-ml-4"
+                            class="tw-ml-4 tw-text-xl tw-font-semibold tw-text-white"
                         >
                             Withdraw
                         </h2>
@@ -27,11 +27,11 @@
 
                     <!-- Content -->
                     <div
-                        class="tw-p-6 tw-max-h-[calc(100vh-10rem)] tw-overflow-y-auto"
+                        class="tw-max-h-[calc(100vh-10rem)] tw-overflow-y-auto tw-p-6"
                     >
                         <div>
                             <div
-                                class="tw-grid-cols-1 lg:tw-grid-cols-3 tw-gap-8 tw-grid"
+                                class="tw-grid tw-grid-cols-1 tw-gap-8 lg:tw-grid-cols-3"
                             >
                                 <!-- Main Form -->
                                 <div class="lg:tw-col-span-full">
@@ -39,45 +39,81 @@
                                         <!-- Account Type -->
                                         <div>
                                             <label
-                                                class="tw-text-gray-400 tw-mb-2 tw-block"
+                                                class="tw-mb-2 tw-block tw-text-gray-400"
                                                 >Account Type</label
                                             >
                                             <select
-                                                class="tw-w-full tw-bg-gray-800 tw-border tw-border-gray-700 tw-rounded-lg tw-p-3 tw-text-white"
+                                                class="tw-w-full tw-rounded-lg tw-border tw-border-gray-700 tw-bg-gray-800 tw-p-3 tw-text-white"
                                             >
                                                 <option>Exchange</option>
+                                                <option>Trade</option>
+                                                <option>Perpetual</option>
+                                                <option>Finance</option>
                                             </select>
                                         </div>
 
                                         <!-- Currency Selection -->
-                                        <div>
-                                            <label
-                                                class="tw-text-gray-400 tw-mb-2 tw-block"
-                                                >Please select the currency you
-                                                want to withdraw</label
-                                            >
+                                        <!-- Currency Selector -->
+                                        <div class="tw-relative tw-mb-6">
                                             <button
-                                                class="tw-w-full tw-bg-gray-800 tw-border tw-border-gray-700 tw-rounded-lg tw-p-3 tw-text-white tw-flex tw-items-center tw-justify-between"
+                                                @click="
+                                                    isDropdownOpen =
+                                                        !isDropdownOpen
+                                                "
+                                                class="tw-flex tw-w-full tw-items-center tw-justify-between tw-rounded-lg tw-bg-gray-800 tw-p-3 tw-text-white"
                                             >
                                                 <div
-                                                    class="tw-gap-2 tw-flex tw-items-center"
+                                                    class="tw-flex tw-items-center"
                                                 >
                                                     <img
-                                                        src="https://static-00.iconduck.com/assets.00/tether-cryptocurrency-icon-2048x2048-dp13oydi.png"
-                                                        alt="USDT"
-                                                        class="tw-w-6 tw-h-6 tw-rounded-full"
+                                                        :src="
+                                                            selectedCurrency.icon
+                                                        "
+                                                        class="tw-h-6 tw-w-6 tw-rounded-full"
+                                                        :alt="
+                                                            selectedCurrency.name
+                                                        "
                                                     />
-                                                    <span>USDT</span>
+                                                    <span class="tw-ml-2">{{
+                                                        selectedCurrency.name
+                                                    }}</span>
                                                 </div>
                                                 <ChevronDownIcon
                                                     class="tw-h-5 tw-w-5 tw-text-gray-400"
                                                 />
                                             </button>
+
+                                            <!-- Dropdown -->
+                                            <div
+                                                v-if="isDropdownOpen"
+                                                class="tw-absolute tw-left-0 tw-top-full tw-z-10 tw-mt-2 tw-w-full tw-rounded-lg tw-bg-gray-800 tw-shadow-xl"
+                                            >
+                                                <div
+                                                    v-for="currency in currencies"
+                                                    :key="currency.id"
+                                                    @click="
+                                                        selectCurrency(currency)
+                                                    "
+                                                    class="tw-flex tw-cursor-pointer tw-items-center tw-p-3 hover:tw-bg-gray-700"
+                                                >
+                                                    <img
+                                                        :src="currency.icon"
+                                                        class="tw-h-6 tw-w-6 tw-rounded-full"
+                                                        :alt="currency.name"
+                                                    />
+                                                    <span
+                                                        class="tw-ml-2 tw-text-white"
+                                                        >{{
+                                                            currency.name
+                                                        }}</span
+                                                    >
+                                                </div>
+                                            </div>
                                         </div>
 
                                         <!-- Chain Selection -->
                                         <div>
-                                            <div class="tw-gap-3 tw-flex">
+                                            <div class="tw-flex tw-gap-3">
                                                 <button
                                                     v-for="chain in [
                                                         'ERC20',
@@ -85,7 +121,7 @@
                                                     ]"
                                                     :key="chain"
                                                     :class="[
-                                                        'tw-px-4 tw-py-2 tw-rounded-lg tw-border',
+                                                        'tw-rounded-lg tw-border tw-px-4 tw-py-2',
                                                         selectedChain === chain
                                                             ? 'tw-border-cyan-500 tw-text-cyan-500'
                                                             : 'tw-border-gray-700 tw-text-gray-400',
@@ -98,7 +134,7 @@
                                                 </button>
                                             </div>
                                             <p
-                                                class="tw-text-gray-500 tw-text-sm tw-mt-2"
+                                                class="tw-mt-2 tw-text-sm tw-text-gray-500"
                                             >
                                                 *ERC20 coin withdrawal, please
                                                 enter ERC20 wallet address
@@ -108,35 +144,35 @@
                                         <!-- Withdrawal Address -->
                                         <div>
                                             <label
-                                                class="tw-text-gray-400 tw-mb-2 tw-block"
+                                                class="tw-mb-2 tw-block tw-text-gray-400"
                                                 >Withdrawal address</label
                                             >
                                             <input
                                                 type="text"
                                                 placeholder="Please enter wallet address"
-                                                class="tw-w-full tw-bg-gray-800 tw-border tw-border-gray-700 tw-rounded-lg tw-p-3 tw-text-white"
+                                                class="tw-w-full tw-rounded-lg tw-border tw-border-gray-700 tw-bg-gray-800 tw-p-3 tw-text-white"
                                             />
                                         </div>
 
                                         <!-- Withdrawal Quantity -->
                                         <div>
                                             <label
-                                                class="tw-text-gray-400 tw-mb-2 tw-block"
+                                                class="tw-mb-2 tw-block tw-text-gray-400"
                                                 >Withdrawal Quantity</label
                                             >
                                             <div class="tw-relative">
                                                 <input
                                                     type="number"
                                                     placeholder="Please enter the quantity"
-                                                    class="tw-w-full tw-bg-gray-800 tw-border tw-border-gray-700 tw-rounded-lg tw-p-3 tw-text-white tw-pr-16"
+                                                    class="tw-w-full tw-rounded-lg tw-border tw-border-gray-700 tw-bg-gray-800 tw-p-3 tw-pr-16 tw-text-white"
                                                 />
                                                 <button
-                                                    class="tw--translate-y-1/2 tw-text-cyan-500 hover:tw-text-cyan-400 tw-absolute tw-right-3 tw-top-1/2"
+                                                    class="tw-absolute tw-right-3 tw-top-1/2 tw--translate-y-1/2 tw-text-cyan-500 hover:tw-text-cyan-400"
                                                 >
                                                     All
                                                 </button>
                                             </div>
-                                            <p class="tw-text-gray-500 tw-mt-2">
+                                            <p class="tw-mt-2 tw-text-gray-500">
                                                 Balance: 0USDT
                                             </p>
                                         </div>
@@ -144,20 +180,20 @@
                                         <!-- Handling Fee -->
                                         <div>
                                             <label
-                                                class="tw-text-gray-400 tw-mb-2 tw-block"
+                                                class="tw-mb-2 tw-block tw-text-gray-400"
                                                 >Handling fee</label
                                             >
                                             <input
                                                 type="number"
                                                 value="0"
                                                 readonly
-                                                class="tw-w-full tw-bg-gray-800 tw-border tw-border-gray-700 tw-rounded-lg tw-p-3 tw-text-white"
+                                                class="tw-w-full tw-rounded-lg tw-border tw-border-gray-700 tw-bg-gray-800 tw-p-3 tw-text-white"
                                             />
                                         </div>
 
                                         <!-- Submit Button -->
                                         <button
-                                            class="tw-w-full tw-bg-cyan-500 tw-text-black tw-py-3 tw-rounded-lg hover:tw-bg-cyan-400 tw-transition-colors"
+                                            class="tw-w-full tw-rounded-lg tw-bg-cyan-500 tw-py-3 tw-text-black tw-transition-colors hover:tw-bg-cyan-400"
                                         >
                                             Withdraw
                                         </button>
@@ -167,10 +203,10 @@
                                 <!-- Important Notice -->
                                 <div class="lg:tw-col-span-full">
                                     <div
-                                        class="tw-bg-gray-800 tw-rounded-lg tw-p-6"
+                                        class="tw-rounded-lg tw-bg-gray-800 tw-p-6"
                                     >
                                         <div
-                                            class="tw-gap-2 tw-text-yellow-500 tw-mb-4 tw-flex tw-items-center"
+                                            class="tw-mb-4 tw-flex tw-items-center tw-gap-2 tw-text-yellow-500"
                                         >
                                             <AlertTriangleIcon
                                                 class="tw-h-5 tw-w-5"
@@ -180,7 +216,7 @@
                                             </h3>
                                         </div>
                                         <ol
-                                            class="tw-text-gray-400 tw-list-decimal tw-list-inside tw-space-y-4"
+                                            class="tw-list-inside tw-list-decimal tw-space-y-4 tw-text-gray-400"
                                         >
                                             <li>
                                                 In order to prevent arbitrage
@@ -216,7 +252,7 @@
                         <div>
                             <button
                                 @click="closeModal"
-                                class="tw-w-full tw-bg-red-500 tw-text-black tw-py-3 tw-rounded-lg hover:tw-bg-red-400 tw-transition-colors tw-mt-2"
+                                class="tw-mt-2 tw-w-full tw-rounded-lg tw-bg-red-500 tw-py-3 tw-text-black tw-transition-colors hover:tw-bg-red-400"
                             >
                                 Close
                             </button>
@@ -227,9 +263,9 @@
                 <!-- Contact Button -->
                 <button
                     @click="handleContact"
-                    class="tw-bg-green-500/90 tw-text-white tw-px-4 tw-py-2 tw-rounded-full tw-fixed tw-bottom-4 tw-right-4 tw-flex tw-items-center"
+                    class="tw-fixed tw-bottom-4 tw-right-4 tw-flex tw-items-center tw-rounded-full tw-bg-green-500/90 tw-px-4 tw-py-2 tw-text-white"
                 >
-                    <HeadphonesIcon class="tw-h-5 tw-w-5 tw-mr-2" />
+                    <HeadphonesIcon class="tw-mr-2 tw-h-5 tw-w-5" />
                     Contact Us
                 </button>
             </div>
@@ -273,6 +309,36 @@ const currencies: Currency[] = [
         id: 'usdt',
         name: 'USDT',
         icon: 'https://static-00.iconduck.com/assets.00/tether-cryptocurrency-icon-2048x2048-dp13oydi.png',
+    },
+    {
+        id: 'eth',
+        name: 'ETH',
+        icon: 'https://cryptologos.cc/logos/ethereum-eth-logo.png',
+    },
+    {
+        id: 'btc',
+        name: 'BTC',
+        icon: 'https://cryptologos.cc/logos/bitcoin-btc-logo.png',
+    },
+    {
+        id: 'usdc',
+        name: 'USDC',
+        icon: 'https://cryptologos.cc/logos/usd-coin-usdc-logo.png',
+    },
+    {
+        id: 'dai',
+        name: 'DAI',
+        icon: 'https://cryptologos.cc/logos/multi-collateral-dai-dai-logo.png',
+    },
+    {
+        id: 'shib',
+        name: 'SHIB',
+        icon: 'https://cryptologos.cc/logos/shiba-inu-shib-logo.png',
+    },
+    {
+        id: 'xrp',
+        name: 'XRP',
+        icon: 'https://cryptologos.cc/logos/xrp-xrp-logo.png',
     },
 ];
 const selectedCurrency = ref(currencies[0]);
