@@ -1,7 +1,9 @@
+import '@fortawesome/fontawesome-free/css/all.css';
+import '@fortawesome/fontawesome-free/js/all.js';
 import '../css/app.css';
 import './bootstrap';
 
-import { createApp, DefineComponent, h } from 'vue';
+import { createApp } from 'vue';
 import { ZiggyVue } from '../../vendor/tightenco/ziggy';
 import { getImportedAsset } from './utils/assets';
 import { Ziggy } from './ziggy';

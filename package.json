@@ -31,6 +31,7 @@
         "vue-tsc": "^2.0.24"
     },
     "dependencies": {
+        "@fortawesome/fontawesome-free": "^6.7.2",
         "lightweight-charts": "^4.2.2",
         "lucide-vue-next": "^0.469.0",
         "trading-charts": "github:adrianmanchev/trading-charts",
