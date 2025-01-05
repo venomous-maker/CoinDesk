@@ -33,6 +33,8 @@ Route::prefix('/finance')->name('finance.')->group(function (){
     Route::get('/index', [FinanceController::class, 'index'])->name('index');
     Route::get('/ai-quantization', [FinanceController::class, 'aiQuantization'])->name('ai-quantization');
     Route::get("/assets", [FinanceController::class, "assets"])->name('assets');
+    Route::get('/defi-loan', [FinanceController::class, 'defiLoan'])->name('defi-loan');
+    Route::get("/credit-lending", [FinanceController::class, "creditLending"])->name('credit-lending');
 });
 
 Route::get('/dashboard', function () {
