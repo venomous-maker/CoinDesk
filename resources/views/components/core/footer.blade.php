@@ -10,7 +10,7 @@
                     <div class="widget widget_about">
                         <h4 class="widget-title text-white">About Company</h4>
                         <div class="logo-footer clearfix p-b15">
-                            <a href="index.html"><img src="{{get_logo(footer: true)}}" width="230" height="67" alt=""/></a>
+                            <a href="{{ route('home') }}"><img src="{{get_logo(footer: true)}}" width="230" height="67" alt=""/></a>
                         </div>
                         <p>
                             We are a leading platform for cryptocurrency trading and investments. We offer secure, fast, and reliable services to help individuals navigate the world of digital assets with ease and confidence.
