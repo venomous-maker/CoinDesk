@@ -1,156 +1,209 @@
 <template>
-    <div class="tw-min-h-screen tw-bg-black tw-p-6 tw-text-gray-300">
-        <!-- Top Metrics -->
-        <div class="tw-mb-8 tw-grid tw-grid-cols-3 tw-gap-8">
-            <div>
-                <div class="tw-mb-2 tw-flex tw-items-center tw-gap-2">
-                    <span>Escrow amount</span>
-                    <InfoIcon class="tw-h-4 tw-w-4 tw-text-gray-500" />
-                </div>
-                <div class="tw-text-3xl tw-text-white">0</div>
-                <div class="tw-mt-1 tw-text-sm tw-text-gray-500">Pre-earnings</div>
-                <div class="tw-text-xl tw-text-white">0</div>
+    <div class="escrow-panel">
+        <!-- Escrow Summary -->
+        <div class="summary">
+            <div class="summary-item">
+                <p>Escrow amount</p>
+                <h2>0</h2>
             </div>
-            <div>
-                <div class="tw-text-sm tw-text-gray-500">Total revenue</div>
-                <div class="tw-text-xl tw-text-white">0</div>
+            <div class="summary-item">
+                <p>Pre-earnings</p>
+                <h2>0</h2>
             </div>
-            <div>
-                <div class="tw-text-sm tw-text-gray-500">Order Holding</div>
-                <div class="tw-text-xl tw-text-white">0</div>
+            <div class="summary-item">
+                <p>Total revenue</p>
+                <h2>0</h2>
+            </div>
+            <div class="summary-item">
+                <p>Order Hosting</p>
+                <h2>0</h2>
             </div>
         </div>
 
-        <!-- Currency Tabs -->
-        <div class="tw-mb-8 tw-flex tw-gap-4">
-            <button
-                v-for="currency in ['BTC', 'ETH', 'USDC']"
-                :key="currency"
-                :class="[
-                    'tw-rounded-lg tw-px-4 tw-py-2 tw-font-medium',
-                    selectedCurrency === currency
-                        ? 'tw-bg-gray-800 tw-text-white'
-                        : 'tw-text-gray-500',
-                ]"
-                @click="selectedCurrency = currency"
-            >
-                {{ currency }}
-            </button>
+        <!-- Tabs -->
+        <div class="tabs">
+            <button :class="{ active: activeTab === 'BTC' }" @click="activeTab = 'BTC'">BTC</button>
+            <button :class="{ active: activeTab === 'ETH' }" @click="activeTab = 'ETH'">ETH</button>
+            <button :class="{ active: activeTab === 'USDC' }" @click="activeTab = 'USDC'">USDC</button>
         </div>
 
-        <!-- Products Table -->
-        <div class="tw-mb-8">
-            <div class="tw-grid tw-grid-cols-5 tw-gap-4 tw-px-4 tw-py-2 tw-text-sm tw-text-gray-500">
-                <div>Name of product</div>
-                <div>Cyclicality</div>
-                <div>Prices</div>
-                <div>Daily Return</div>
-                <div></div>
-            </div>
-
-            <div
-                v-for="product in products"
-                :key="product.id"
-                class="tw-grid tw-grid-cols-5 tw-items-center tw-gap-4 tw-border-t tw-border-gray-800 tw-px-4 tw-py-4"
-            >
-                <div class="tw-flex tw-items-center tw-gap-2">
-                    <RobotIcon class="tw-h-6 tw-w-6 tw-text-gray-400" />
-                    <span>BTC Robots</span>
-                    <div
-                        v-if="product.vip"
-                        class="tw-rounded bg-yellow-900/20 tw-px-2 tw-py-0.5 tw-text-xs tw-text-yellow-600"
-                    >
-                        VIP
-                    </div>
-                </div>
-                <div>Indefinite</div>
-                <div>{{ product.priceRange }} USDT</div>
-                <div>{{ product.dailyReturn }}%</div>
-                <div>
-                    <button
-                        class="tw-rounded-lg bg-cyan-500 tw-px-4 tw-py-1.5 tw-text-sm tw-font-medium tw-text-black hover:bg-cyan-600"
-                    >
-                        Rent Now
-                    </button>
-                </div>
-            </div>
-        </div>
+        <!-- Product Table -->
+        <table class="product-table">
+            <thead>
+            <tr>
+                <th>Name of product</th>
+                <th>Cyclicality</th>
+                <th>Prices</th>
+                <th>Daily Return</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr v-for="(product, index) in products" :key="index">
+                <td>
+                    <img :src="product.icon" alt="icon" class="product-icon" />
+                    {{ product.name }}
+                </td>
+                <td>{{ product.cyclicality }}</td>
+                <td>{{ product.prices }}</td>
+                <td>{{ product.dailyReturn }}</td>
+                <td>
+                    <button class="rent-button">Rent Now</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
 
         <!-- Bottom Tabs -->
-        <div class="tw-mb-6 tw-border-b tw-border-gray-800">
-            <div class="tw-flex tw-gap-8">
-                <button
-                    v-for="tab in ['Buy', 'Redeem', 'Interest']"
-                    :key="tab"
-                    :class="[
-                        'tw-border-b-2 tw-px-4 tw-py-2',
-                        selectedTab === tab
-                            ? 'border-cyan-500 tw-text-white'
-                            : 'tw-border-transparent tw-text-gray-500',
-                    ]"
-                    @click="selectedTab = tab"
-                >
-                    {{ tab }}
-                </button>
-            </div>
+        <div class="bottom-tabs">
+            <button :class="{ active: bottomTab === 'Buy' }" @click="bottomTab = 'Buy'">Buy</button>
+            <button :class="{ active: bottomTab === 'Redeem' }" @click="bottomTab = 'Redeem'">Redeem</button>
+            <button :class="{ active: bottomTab === 'Interest' }" @click="bottomTab = 'Interest'">Interest</button>
         </div>
 
-        <!-- Transactions Table -->
-        <div class="tw-grid tw-grid-cols-7 tw-gap-4 tw-px-4 tw-py-2 tw-text-sm tw-text-gray-500">
-            <div>Name of product</div>
-            <div>Time of purchase</div>
-            <div>Closing time</div>
-            <div>Payment amount</div>
-            <div>Total revenue</div>
-            <div>Daily Profit</div>
-            <div>Status</div>
-        </div>
-        <div class="tw-py-8 tw-text-center tw-text-gray-500">No data</div>
+        <!-- Bottom Table -->
+        <table class="bottom-table">
+            <thead>
+            <tr>
+                <th>Name of product</th>
+                <th>Time of purchase</th>
+                <th>Closing time</th>
+                <th>Payment amount</th>
+                <th>Total revenue</th>
+                <th>Daily Profit</th>
+                <th>Status</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td colspan="7" class="no-data">No data</td>
+            </tr>
+            </tbody>
+        </table>
     </div>
 </template>
 
-<script setup>
-import { InfoIcon } from 'lucide-vue-next';
-import { ref, defineComponent, h } from 'vue';
-
-const RobotIcon = defineComponent({
-    name: 'RobotIcon',
-    render: () =>
-        h(
-            'svg',
-            {
-                xmlns: 'http://www.w3.org/2000/svg',
-                viewBox: '0 0 24 24',
-                fill: 'none',
-                stroke: 'currentColor',
-                class: 'tw-w-6 tw-h-6',
-            },
-            [
-                h('path', {
-                    d: 'M12 2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2 2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z',
-                    strokeLinecap: 'round',
-                    strokeLinejoin: 'round',
-                }),
-                h('rect', {
-                    x: '4',
-                    y: '10',
-                    width: '16',
-                    height: '12',
-                    rx: '2',
-                    strokeLinecap: 'round',
-                    strokeLinejoin: 'round',
-                }),
+<script>
+export default {
+    data() {
+        return {
+            activeTab: "BTC",
+            bottomTab: "Buy",
+            products: [
+                {
+                    icon: "robot-icon.png", // Replace with actual path to icon
+                    name: "BTC Robots",
+                    cyclicality: "Indefinite",
+                    prices: "100.00 ~ 10.00K USDT",
+                    dailyReturn: "1.7%",
+                },
+                {
+                    icon: "robot-icon.png",
+                    name: "BTC Robots (VIP)",
+                    cyclicality: "Indefinite",
+                    prices: "10.00K ~ 100.00K USDT",
+                    dailyReturn: "2.2%",
+                },
+                {
+                    icon: "robot-icon.png",
+                    name: "BTC Robots (VIP)",
+                    cyclicality: "Indefinite",
+                    prices: "100.00K ~ 1.00M USDT",
+                    dailyReturn: "2.7%",
+                },
+                {
+                    icon: "robot-icon.png",
+                    name: "BTC Robots (VVIP)",
+                    cyclicality: "Indefinite",
+                    prices: "1.00M ~ 10.00M USDT",
+                    dailyReturn: "3.2%",
+                },
             ],
-        ),
-});
-
-const selectedCurrency = ref('BTC');
-const selectedTab = ref('Buy');
-
-const products = ref([
-    { id: 1, priceRange: '100.00 ~ 10.00K', dailyReturn: 1.7, vip: false },
-    { id: 2, priceRange: '10.00K ~ 100.00K', dailyReturn: 2.2, vip: true },
-    { id: 3, priceRange: '100.00K ~ 1.00M', dailyReturn: 2.7, vip: true },
-    { id: 4, priceRange: '1.00M ~ 10.00M', dailyReturn: 3.2, vip: true },
-]);
+        };
+    },
+};
 </script>
+
+<style scoped>
+.escrow-panel {
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+}
+.summary {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.summary-item {
+    text-align: center;
+}
+.tabs {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+.tabs button {
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+.tabs button.active {
+    background: #1a1a1a;
+}
+.product-table {
+    width: 100%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+}
+.product-table th,
+.product-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #444;
+}
+.product-icon {
+    width: 20px;
+    margin-right: 10px;
+}
+.rent-button {
+    background: #00c2ff;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+}
+.bottom-tabs {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+.bottom-tabs button {
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+.bottom-tabs button.active {
+    background: #1a1a1a;
+}
+.bottom-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.bottom-table th,
+.bottom-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #444;
+}
+.no-data {
+    text-align: center;
+    color: #777;
+}
+</style>
