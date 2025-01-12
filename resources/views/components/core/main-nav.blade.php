@@ -54,6 +54,7 @@
         <ul class="sub-menu">
             <li><a href="{{ route('finance.assets') }}">Assets</a></li>
             <li><a href="{{ route('finance.ai-quantization') }}">Ai Quantization</a></li>
+            <li><a href="{{ route('finance.defi-loan') }}">Defi Loan</a></li>
         </ul>
     @else
         <a href="#" data-bs-toggle="modal" data-bs-target="#Login-form">Finance<i class="fa fa-chevron-down"></i></a>
