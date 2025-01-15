@@ -3,22 +3,15 @@
         <div class="clearfix">
             <div class="wt-topbar-left">
                 <ul class="list-unstyled e-p-bx pull-left">
-                    <li><i class="fa fa-envelope"></i>info@coindesk.co.ke</li>
-                    <li><i class="fa fa-phone"></i>(654) 321-7654</li>
+                    <li><i class="fa fa-envelope"></i>info@mavexcrypt.com</li>
+                    <li><i class="fa fa-phone"></i>+1(654) 321-7654</li>
                 </ul>
             </div>
 
             <div class="wt-topbar-right">
                 <div class=" language-select pull-right">
                     <div class="dropdown">
-                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown">Language
-                            <span class="caret"></span></button>
-                        <ul class="dropdown-menu dropdown-menu-right">
-                            <li><a href="#"><img src="{{ get_imported_asset("images/united-states.png")}}" alt="">English</a></li>
-                            <li><a href="#"><img src="{{ get_imported_asset("images/france.png")}}" alt="">French</a></li>
-                            <li><a href="#"><img src="{{ get_imported_asset("images/germany.png")}}" alt="">German</a></li>
-                        </ul>
-                    </div>
+                                            </div>
                 </div>
 
                 <ul class="list-unstyled e-p-bx pull-right">

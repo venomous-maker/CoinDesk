@@ -19,69 +19,13 @@
                 </div>
                 <!-- RESENT POST -->
                 <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="widget recent-posts-entry-date">
-                        <h4 class="widget-title text-white">Resent Post</h4>
-                        <div class="widget-post-bx">
-                            <div class="bdr-light-blue widget-post clearfix  bdr-b-1 m-b10 p-b10">
-                                <div class="wt-post-date text-center text-uppercase text-white p-t5">
-                                    <strong>20</strong>
-                                    <span>Mar</span>
-                                </div>
-                                <div class="wt-post-info">
-                                    <div class="wt-post-header">
-                                        <h6 class="post-title"><a href="blog-single.html">Blog title first </a></h6>
-                                    </div>
-                                    <div class="wt-post-meta">
-                                        <ul>
-                                            <li class="post-author"><i class="fa fa-user"></i>By Admin</li>
-                                            <li class="post-comment"><i class="fa fa-comments"></i> 28</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="bdr-light-blue widget-post clearfix  bdr-b-1 m-b10 p-b10">
-                                <div class="wt-post-date text-center text-uppercase text-white p-t5">
-                                    <strong>30</strong>
-                                    <span>Mar</span>
-                                </div>
-                                <div class="wt-post-info">
-                                    <div class="wt-post-header">
-                                        <h6 class="post-title"><a href="blog-single.html">Blog title first </a></h6>
-                                    </div>
-                                    <div class="wt-post-meta">
-                                        <ul>
-                                            <li class="post-author"><i class="fa fa-user"></i>By Admin</li>
-                                            <li class="post-comment"><i class="fa fa-comments"></i> 29</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="bdr-light-blue widget-post clearfix  bdr-b-1 m-b10 p-b10">
-                                <div class="wt-post-date text-center text-uppercase text-white p-t5">
-                                    <strong>31</strong>
-                                    <span>Mar</span>
-                                </div>
-                                <div class="wt-post-info">
-                                    <div class="wt-post-header">
-                                        <h6 class="post-title"><a href="blog-single.html">Blog title first </a></h6>
-                                    </div>
-                                    <div class="wt-post-meta">
-                                        <ul>
-                                            <li class="post-author"><i class="fa fa-user"></i>By Admin</li>
-                                            <li class="post-comment"><i class="fa fa-comments"></i> 30</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 <!-- USEFUL LINKS -->
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="widget widget_services">
                         <h4 class="widget-title text-white">Useful links</h4>
                         <ul>
-                            <li><a href="about-1.html">About</a></li>
+                            <li><a href="/home/about">About</a></li>
                             <li><a href="faq-1.html">FAQ</a></li>
                             <li><a href="our-team.html">Our Team</a></li>
                             <li><a href="services-1.html">Services</a></li>
@@ -91,32 +35,7 @@
                 </div>
                 <!-- NEWSLETTER -->
                 <div class="col-lg-3 col-md-6">
-                    <div class="widget widget_newsletter">
-                        <h4 class="widget-title text-white">Newsletter</h4>
-                        <div class="newsletter-bx">
-                            <form role="search" method="post">
-                                <div class="input-group">
-                                    <input name="news-letter" class="form-control" placeholder="ENTER YOUR EMAIL" type="text">
-                                    <span class="input-group-btn">
-                                                <button type="submit" class="site-button"><i class="fa fa-paper-plane-o"></i></button>
-                                            </span>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <!-- SOCIAL LINKS -->
-                    <div class="widget widget_social_inks">
-                        <h4 class="widget-title text-white">Social Links</h4>
-                        <ul class="social-icons social-square social-darkest">
-                            <li><a href="javascript:void(0);" class="fa fa-facebook"></a></li>
-                            <li><a href="javascript:void(0);" class="fa fa-twitter"></a></li>
-                            <li><a href="javascript:void(0);" class="fa fa-linkedin"></a></li>
-                            <li><a href="javascript:void(0);" class="fa fa-rss"></a></li>
-                            <li><a href="javascript:void(0);" class="fa fa-youtube"></a></li>
-                            <li><a href="javascript:void(0);" class="fa fa-instagram"></a></li>
-                        </ul>
-                    </div>
-                </div>
+                                    </div>
             </div>
             <div class="row">
 
@@ -138,8 +57,8 @@
                         </div>
                         <div class="icon-content text-white">
                             <h5 class="wt-tilte text-uppercase m-b0">Phone</h5>
-                            <p class="m-b0">+41 555 888 9585</p>
-                            <p>+41 555 888 9585</p>
+                            <p class="m-b0">+1(654) 321 7654</p>
+                            <p>+1(654) 321 7654</p>
                         </div>
                     </div>
                 </div>
@@ -150,8 +69,8 @@
                         </div>
                         <div class="icon-content text-white">
                             <h5 class="wt-tilte text-uppercase m-b0">Fax</h5>
-                            <p class="m-b0">FAX: (123) 123-4567</p>
-                            <p>FAX: (123) 123-4567</p>
+                            <p class="m-b0">FAX: (654) 321 7654</p>
+                            <p>FAX: (654) 321 7654</p>
                         </div>
                     </div>
                 </div>
@@ -162,8 +81,8 @@
                         </div>
                         <div class="icon-content text-white">
                             <h5 class="wt-tilte text-uppercase m-b0">Email</h5>
-                            <p class="m-b0">info@coindesk.co.ke</p>
-                            <p>support@coindesk.com</p>
+                            <p class="m-b0">info@mavexcrypt.com</p>
+                            <p>support@mavexcrypt.com</p>
                         </div>
                     </div>
                 </div>
@@ -178,7 +97,8 @@
         <div class="container p-t30">
             <div class="cpr-ftr-section">
                 <div class="wt-footer-bot-left">
-                    <span class="copyrights-text">© {{now()->year}} Your Company. All Rights Reserved. Designed By thewebmax.</span>
+                    <span class="copyrights-text">© {{now()->year}} Mavexcrypt. All Rights Reserved.</span>
+
                 </div>
                 <div class="wt-footer-bot-right">
                     <ul class="copyrights-nav pull-right">

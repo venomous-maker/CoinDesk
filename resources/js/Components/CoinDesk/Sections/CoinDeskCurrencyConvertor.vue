@@ -19,7 +19,8 @@ import { getImportedAsset } from '@/utils/assets';
                                 Currency convertor
                             </h2>
                             <p>
-                                Stay updated with live cryptocurrency exchange rates!
+                                Stay updated with live cryptocurrency exchange
+                                rates!
                             </p>
                         </div>
                         <div class="currency-calculator sp-one">
@@ -34,12 +35,10 @@ import { getImportedAsset } from '@/utils/assets';
                                     border-radius="0.60rem"
                                     background-color="#171f2c"
                                     decimal-places="2"
-                                    ><a href="https://cr.today/" rel="noopener"
+                                    ><a rel="noopener"
                                         >Converter Widget</a
                                     ></crypto-converter-widget
                                 >
-                                 <a href="https://co-w.io/">co-w.io</a>
-
                             </div>
                         </div>
                     </div>
@@ -55,20 +54,21 @@ import { getImportedAsset } from '@/utils/assets';
                         >
                         <p>
                             <strong
-                                >Cryptocurrency has been revolutionizing the financial world since its inception. Whether you're looking to buy, sell, or trade, it's easy to get started. Dive into the world of crypto and explore the opportunities it offers. Don't miss out on the future of finance!</strong
+                                >Cryptocurrency has been revolutionizing the
+                                financial world since its inception. Whether
+                                you're looking to buy, sell, or trade, it's easy
+                                to get started. Dive into the world of crypto
+                                and explore the opportunities it offers. Don't
+                                miss out on the future of finance!</strong
                             >
                         </p>
                         <ul class="list-check-circle primary">
+                            <li>Simplified Process for Beginners</li>
+                            <li>Secure and Fast Transactions</li>
+                            <li>Fast and Efficient</li>
                             <li>
-                                Simplified Process for Beginners
+                                A Long-Standing Tradition in Digital Currency
                             </li>
-                            <li>
-                                Secure and Fast Transactions
-                            </li>
-                            <li>
-                                Fast and Efficient
-                            </li>
-                            <li>A Long-Standing Tradition in Digital Currency</li>
                         </ul>
                     </div>
                 </div>

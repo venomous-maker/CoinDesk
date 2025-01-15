@@ -46,14 +46,7 @@
 
             </ul>
         </li>
-        <li>
-            <a href="javascript:;">More<i class="fa fa-chevron-down"></i></a>
-            <ul class="sub-menu">
-                <li><a href="{{route('trade.trading')}}">Trading</a></li>
-                <li><a href="index-2.html">Perpetual</a></li>
-                <li><a href="index-3.html">Spot</a></li>
-            </ul>
-        </li>
+
 {{--        <li>--}}
 {{--            <a href="javascript:;">Pages<i class="fa fa-chevron-down"></i></a>--}}
 {{--            <ul class="sub-menu">--}}

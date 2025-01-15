@@ -8,9 +8,9 @@ import { getImportedAsset } from '@/utils/assets';
             <!-- TITLE START-->
             <div class="section-head text-center">
                 <span class="wt-title-subline font-16 text-gray-dark m-b15"
-                    >Three steps bticoin</span
+                    >Three steps bitcoin</span
                 >
-                <h2 class="text-uppercase">How It Work</h2>
+                <h2 class="text-uppercase">How It Works</h2>
                 <div class="wt-separator-outer">
                     <div class="wt-separator site-bg-primary"></div>
                 </div>

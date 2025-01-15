@@ -11,7 +11,7 @@
         <coin-desk-how-it-work></coin-desk-how-it-work>
         <coin-desk-currency-convertor></coin-desk-currency-convertor>
 {{--        <coin-desk-our-team-member></coin-desk-our-team-member>--}}
-        <coin-desk-any-query></coin-desk-any-query>
+      {{--  <coin-desk-any-query></coin-desk-any-query> --}}
 {{--        <coin-desk-latest-blog></coin-desk-latest-blog>--}}
 {{--        <coin-desk-contact-us></coin-desk-contact-us>--}}
 {{--        <coin-desk-what-our-clients-say></coin-desk-what-our-clients-say>--}}

@@ -8,9 +8,9 @@ import { getImportedAsset } from '@/utils/assets';
             <!-- TITLE START-->
             <div class="section-head text-center">
                 <span class="wt-title-subline font-16 text-gray-dark m-b15"
-                    >Buy and Sell Bitcoin</span
+                    >Buy and Sell Bitcoin using Mavexcrypt</span
                 >
-                <h2 class="text-uppercase">Why Choose Bitcoin</h2>
+                <h2 class="text-uppercase">Why Choose Mavexcrypt</h2>
                 <div class="wt-separator-outer">
                     <div class="wt-separator site-bg-primary"></div>
                 </div>
@@ -114,97 +114,7 @@ import { getImportedAsset } from '@/utils/assets';
                             </div>
                         </div>
                     </div>
-                    <!-- COLUMNS 4 -->
-                    <div class="col-lg-4 col-md-6 m-b30 animate_line">
-                        <div
-                            class="wt-icon-box-wraper p-a30 center m-a5 bg-white"
-                        >
-                            <div class="icon-lg site-text-primary m-b20">
-                                <a href="#" class="icon-cell"
-                                    ><img
-                                        :src="
-                                            getImportedAsset(
-                                                'images/icon/pick-19.png',
-                                            )
-                                        "
-                                        alt=""
-                                /></a>
-                            </div>
-                            <div class="icon-content">
-                                <h4
-                                    class="wt-tilte text-uppercase font-weight-500"
-                                >
-                                    Investment Planning
-                                </h4>
-                                <p>
-                                    Bitcoin is an excellent addition to any
-                                    diversified investment strategy, offering
-                                    long-term growth potential.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- COLUMNS 5 -->
-                    <div class="col-lg-4 col-md-6 m-b30 animate_line">
-                        <div
-                            class="wt-icon-box-wraper p-a30 center m-a5 bg-white"
-                        >
-                            <div class="icon-lg site-text-primary m-b20">
-                                <a href="#" class="icon-cell"
-                                    ><img
-                                        :src="
-                                            getImportedAsset(
-                                                'images/icon/pick-12.png',
-                                            )
-                                        "
-                                        alt=""
-                                /></a>
-                            </div>
-                            <div class="icon-content">
-                                <h4
-                                    class="wt-tilte text-uppercase font-weight-500"
-                                >
-                                    Covered By Insurance
-                                </h4>
-                                <p>
-                                    Some platforms provide insurance for your
-                                    Bitcoin holdings, adding an extra layer of
-                                    security for your investments.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- COLUMNS 6 -->
-                    <div class="col-lg-4 col-md-6 m-b30 animate_line">
-                        <div
-                            class="wt-icon-box-wraper p-a30 center m-a5 bg-white"
-                        >
-                            <div class="icon-lg site-text-primary m-b20">
-                                <a href="#" class="icon-cell"
-                                    ><img
-                                        :src="
-                                            getImportedAsset(
-                                                'images/icon/pick-38.png',
-                                            )
-                                        "
-                                        alt=""
-                                /></a>
-                            </div>
-                            <div class="icon-content">
-                                <h4
-                                    class="wt-tilte text-uppercase font-weight-500"
-                                >
-                                    Bitcoin Transaction
-                                </h4>
-                                <p>
-                                    Effortlessly send and receive Bitcoin
-                                    globally with minimal fees and unparalleled
-                                    transaction speed.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                                    </div>
             </div>
         </div>
     </div>

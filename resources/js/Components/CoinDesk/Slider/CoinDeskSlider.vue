@@ -1011,10 +1011,8 @@ onMounted(() => {
                                         <span
                                             class="site-text-primary"
                                             style="padding-right: 10px"
-                                            >Bitcoin</span
-                                        ><span class="text-white"
-                                            >Currency</span
-                                        >
+                                            >Mavex</span
+                                        ><span class="text-white">Crypt</span>
                                     </div>
                                 </div>
 
