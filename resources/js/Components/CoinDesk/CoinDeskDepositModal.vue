@@ -3,14 +3,14 @@
         <Transition name="modal">
             <div
                 v-if="isOpen"
-                class="tw-bg-black/80 tw-fixed tw-inset-0 tw-z-50 tw-flex tw-items-center tw-justify-center tw-overflow-y-auto"
+                class="tw-fixed tw-inset-0 tw-z-50 tw-flex tw-items-center tw-justify-center tw-overflow-y-auto tw-bg-black/80"
             >
                 <div
-                    class="tw-bg-gray-900 tw-w-full tw-max-w-2xl tw-rounded-lg tw-overflow-hidden"
+                    class="tw-w-full tw-max-w-2xl tw-overflow-hidden tw-rounded-lg tw-bg-gray-900"
                 >
                     <!-- Header -->
                     <div
-                        class="tw-p-4 tw-border-b tw-border-gray-800 tw-flex tw-items-center"
+                        class="tw-flex tw-items-center tw-border-b tw-border-gray-800 tw-p-4"
                     >
                         <button
                             @click="closeModal"
@@ -19,7 +19,7 @@
                             <ArrowLeftIcon class="tw-h-6 tw-w-6" />
                         </button>
                         <h2
-                            class="tw-text-xl tw-font-semibold tw-text-white tw-ml-4"
+                            class="tw-ml-4 tw-text-xl tw-font-semibold tw-text-white"
                         >
                             Deposit
                         </h2>
@@ -27,9 +27,9 @@
 
                     <!-- Content -->
                     <div
-                        class="tw-p-6 tw-max-h-[calc(100vh-10rem)] tw-overflow-y-auto"
+                        class="tw-max-h-[calc(100vh-10rem)] tw-overflow-y-auto tw-p-6"
                     >
-                        <p class="tw-text-gray-400 tw-mb-4">
+                        <p class="tw-mb-4 tw-text-gray-400">
                             Please select the currency you want to Deposit
                         </p>
 
@@ -37,12 +37,12 @@
                         <div class="tw-relative tw-mb-6">
                             <button
                                 @click="isDropdownOpen = !isDropdownOpen"
-                                class="tw-w-full tw-p-3 tw-bg-gray-800 tw-rounded-lg tw-text-white tw-flex tw-items-center tw-justify-between"
+                                class="tw-flex tw-w-full tw-items-center tw-justify-between tw-rounded-lg tw-bg-gray-800 tw-p-3 tw-text-white"
                             >
                                 <div class="tw-flex tw-items-center">
                                     <img
                                         :src="selectedCurrency.icon"
-                                        class="tw-w-6 tw-h-6 tw-rounded-full"
+                                        class="tw-h-6 tw-w-6 tw-rounded-full"
                                         :alt="selectedCurrency.name"
                                     />
                                     <span class="tw-ml-2">{{
@@ -57,20 +57,20 @@
                             <!-- Dropdown -->
                             <div
                                 v-if="isDropdownOpen"
-                                class="tw-w-full tw-bg-gray-800 tw-rounded-lg tw-shadow-xl tw-absolute tw-left-0 tw-top-full tw-z-10 tw-mt-2"
+                                class="tw-absolute tw-left-0 tw-top-full tw-z-10 tw-mt-2 tw-w-full tw-rounded-lg tw-bg-gray-800 tw-shadow-xl"
                             >
                                 <div
                                     v-for="currency in currencies"
                                     :key="currency.id"
                                     @click="selectCurrency(currency)"
-                                    class="tw-p-3 hover:tw-bg-gray-700 tw-cursor-pointer tw-flex tw-items-center"
+                                    class="tw-flex tw-cursor-pointer tw-items-center tw-p-3 hover:tw-bg-gray-700"
                                 >
                                     <img
                                         :src="currency.icon"
-                                        class="tw-w-6 tw-h-6 tw-rounded-full"
+                                        class="tw-h-6 tw-w-6 tw-rounded-full"
                                         :alt="currency.name"
                                     />
-                                    <span class="tw-text-white tw-ml-2">{{
+                                    <span class="tw-ml-2 tw-text-white">{{
                                         currency.name
                                     }}</span>
                                 </div>
@@ -82,22 +82,22 @@
                             <img
                                 :src="qrCodeUrl"
                                 alt="QR Code"
-                                class="tw-w-48 tw-h-48 tw-bg-white"
+                                class="tw-h-48 tw-w-48 tw-bg-white"
                             />
                         </div>
 
                         <!-- Chain Selection -->
                         <div class="tw-mb-6">
-                            <p class="tw-text-gray-400 tw-mb-2">Chain name</p>
-                            <div class="tw-gap-3 tw-flex">
+                            <p class="tw-mb-2 tw-text-gray-400">Chain name</p>
+                            <div class="tw-flex tw-gap-3">
                                 <button
-                                    v-for="chain in chains"
+                                    v-for="chain in selectedCurrency.chains"
                                     :key="chain"
                                     @click="selectedChain = chain"
                                     :class="[
-                                        'tw-px-4 tw-py-2 tw-rounded-lg tw-border',
+                                        'tw-rounded-lg tw-border tw-px-4 tw-py-2',
                                         selectedChain === chain
-                                            ? 'tw-border-cyan-500 text-cyan-500'
+                                            ? 'text-[#edbe00] tw-border-[#edbe00]'
                                             : 'tw-border-gray-700 tw-text-gray-400',
                                     ]"
                                 >
@@ -108,9 +108,9 @@
 
                         <!-- Address -->
                         <div class="tw-mb-6">
-                            <p class="tw-text-gray-400 tw-mb-2">Address</p>
+                            <p class="tw-mb-2 tw-text-gray-400">Address</p>
                             <div
-                                class="tw-bg-gray-800 tw-rounded-lg tw-p-3 tw-flex tw-items-center"
+                                class="tw-flex tw-items-center tw-rounded-lg tw-bg-gray-800 tw-p-3"
                             >
                                 <input
                                     type="text"
@@ -120,7 +120,7 @@
                                 />
                                 <button
                                     @click="copyAddress"
-                                    class="tw-text-cyan-500 hover:tw-text-cyan-400 tw-ml-2"
+                                    class="tw-ml-2 tw-text-[#edbe00] hover:tw-text-cyan-400"
                                 >
                                     Copy
                                 </button>
@@ -129,39 +129,39 @@
 
                         <!-- Amount Input -->
                         <div class="tw-mb-6">
-                            <p class="tw-text-gray-400 tw-mb-2">
+                            <p class="tw-mb-2 tw-text-gray-400">
                                 Deposit amount
                             </p>
                             <input
                                 v-model="amount"
                                 type="number"
                                 placeholder="Please enter the recharge amount"
-                                class="tw-w-full tw-bg-gray-800 tw-rounded-lg tw-p-3 tw-text-white tw-outline-none"
+                                class="tw-w-full tw-rounded-lg tw-bg-gray-800 tw-p-3 tw-text-white tw-outline-none"
                             />
                         </div>
 
                         <!-- Quick Payment Button -->
                         <button
                             @click="handleQuickPayment"
-                            class="tw-w-full tw-bg-cyan-500 tw-text-black tw-py-3 tw-rounded-lg hover:tw-bg-cyan-400 tw-transition-colors"
+                            class="tw-w-full tw-rounded-lg tw-bg-[#edbe00] tw-py-3 tw-text-black tw-transition-colors hover:tw-bg-[#edbe00] "
                         >
                             Quick Payment
                         </button>
 
                         <!-- Offsite Links -->
                         <div class="tw-mt-8">
-                            <p class="tw-text-gray-400 tw-mb-4">Offsite link</p>
-                            <div class="tw-grid-cols-5 tw-gap-4 tw-grid">
+                            <p class="tw-mb-4 tw-text-gray-400">Offsite link</p>
+                            <div class="tw-grid tw-grid-cols-5 tw-gap-4">
                                 <a
                                     v-for="exchange in exchanges"
                                     :key="exchange.name"
                                     :href="exchange.url"
-                                    class="tw-p-3 tw-bg-gray-800 tw-rounded-lg hover:tw-bg-gray-700 tw-transition-colors tw-flex tw-flex-col tw-items-center"
+                                    class="tw-flex tw-flex-col tw-items-center tw-rounded-lg tw-bg-gray-800 tw-p-3 tw-transition-colors hover:tw-bg-gray-700"
                                 >
                                     <img
                                         :src="exchange.icon"
                                         alt=""
-                                        class="tw-w-10 tw-h-10 tw-mb-2"
+                                        class="tw-mb-2 tw-h-10 tw-w-10"
                                     />
                                     <span class="tw-text-sm tw-text-gray-400">{{
                                         exchange.name
@@ -172,20 +172,20 @@
 
                         <!-- Important Notice -->
                         <div
-                            class="tw-bg-gray-800 tw-rounded-lg tw-p-4 tw-mt-8"
+                            class="tw-mt-8 tw-rounded-lg tw-bg-gray-800 tw-p-4"
                         >
                             <div
-                                class="tw-text-yellow-500 tw-mb-4 tw-flex tw-items-center"
+                                class="tw-mb-4 tw-flex tw-items-center tw-text-yellow-500"
                             >
                                 <AlertTriangleIcon
-                                    class="tw-h-5 tw-w-5 tw-mr-2"
+                                    class="tw-mr-2 tw-h-5 tw-w-5"
                                 />
                                 <h3 class="tw-font-semibold">
                                     Important Notice
                                 </h3>
                             </div>
                             <ol
-                                class="tw-text-gray-400 tw-list-decimal tw-pl-4 tw-space-y-2"
+                                class="tw-list-decimal tw-space-y-2 tw-pl-4 tw-text-gray-400"
                             >
                                 <li
                                     v-for="(notice, index) in importantNotices"
@@ -198,7 +198,7 @@
                         <div>
                             <button
                                 @click="closeModal"
-                                class="tw-w-full tw-mt-2 tw-bg-red-500 tw-text-black tw-py-3 tw-rounded-lg hover:tw-bg-red-400 tw-transition-colors"
+                                class="tw-mt-2 tw-w-full tw-rounded-lg tw-bg-red-500 tw-py-3 tw-text-black tw-transition-colors hover:tw-bg-red-400"
                             >
                                 Close
                             </button>
@@ -209,9 +209,9 @@
                 <!-- Contact Button -->
                 <button
                     @click="handleContact"
-                    class="tw-bg-green-500/90 tw-text-white tw-px-4 tw-py-2 tw-rounded-full tw-fixed tw-bottom-4 tw-right-4 tw-flex tw-items-center"
+                    class="tw-fixed tw-bottom-4 tw-right-4 tw-flex tw-items-center tw-rounded-full tw-bg-green-500/90 tw-px-4 tw-py-2 tw-text-white"
                 >
-                    <HeadphonesIcon class="tw-h-5 tw-w-5 tw-mr-2" />
+                    <HeadphonesIcon class="tw-mr-2 tw-h-5 tw-w-5" />
                     Contact Us
                 </button>
             </div>
@@ -237,7 +237,6 @@ const emit = defineEmits(['update:isOpen', 'close']);
 
 // State
 const isDropdownOpen = ref(false);
-const selectedChain = ref('ERC20');
 const amount = ref('');
 const depositAddress = ref('0x8A94B03cc7Da56a8A38B90792991c7CA96b3EC70');
 
@@ -246,6 +245,7 @@ interface Currency {
     id: string;
     name: string;
     icon: string;
+    chains: string[];
 }
 
 interface Exchange {
@@ -260,46 +260,54 @@ const currencies: Currency[] = [
         id: 'usdt',
         name: 'USDT',
         icon: 'https://static-00.iconduck.com/assets.00/tether-cryptocurrency-icon-2048x2048-dp13oydi.png',
+        chains: ['ECR20', 'TRC20'],
     },
     {
         id: 'eth',
         name: 'ETH',
         icon: 'https://cryptologos.cc/logos/ethereum-eth-logo.png',
+        chains: ['ETH'],
     },
     {
         id: 'btc',
         name: 'BTC',
         icon: 'https://cryptologos.cc/logos/bitcoin-btc-logo.png',
+        chains: ['BTC'],
     },
     {
         id: 'usdc',
         name: 'USDC',
         icon: 'https://cryptologos.cc/logos/usd-coin-usdc-logo.png',
+        chains: ['ECR-20'],
     },
     {
         id: 'dai',
         name: 'DAI',
         icon: 'https://cryptologos.cc/logos/multi-collateral-dai-dai-logo.png',
+        chains: ['ECR-20'],
     },
     {
         id: 'shib',
         name: 'SHIB',
         icon: 'https://cryptologos.cc/logos/shiba-inu-shib-logo.png',
+        chains: ['ECR-20'],
     },
     {
         id: 'xrp',
         name: 'XRP',
         icon: 'https://cryptologos.cc/logos/xrp-xrp-logo.png',
-    }
-];const selectedCurrency = ref(currencies[0]);
+        chains: ['Ripple'],
+    },
+];
+const selectedCurrency = ref(currencies[0]);
 
+const selectedChain = ref(selectedCurrency.value.chains[0]);
 // Methods
 const closeModal = () => {
     emit('update:isOpen', false);
     emit('close');
 };
 
-const chains = ['ERC20', 'TRC20'];
 const exchanges: Exchange[] = [
     {
         name: 'Gemini',

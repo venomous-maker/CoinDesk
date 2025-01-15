@@ -1,6 +1,6 @@
 <template>
     <div class="bg-black">
-        <SymbolInfo :options="{symbol: symbol, colorTheme: theme, width: '100%'}"></SymbolInfo>
+        <!-- <SymbolInfo :options="{symbol: symbol, colorTheme: theme, width: '100%'}"></SymbolInfo> -->
         <div class="trading-container">
             <div class="chart-container">
                 <Chart
@@ -21,7 +21,7 @@
                         popup_width: '1000',
                         popup_height: '650',
                         support_host: 'https://www.tradingview.com',
-                        height: 750,
+                        height: 1000,
                     }"
                 />
             </div>
@@ -33,7 +33,7 @@
                             largeChartUrl: route('trade.trading'),
                             colorTheme: 'dark',
                             symbol: symbol,
-                            height: 750,
+                            height: 1000,
                             width: 400,
                         }"
                     />
@@ -41,7 +41,7 @@
 
                 <!-- Coin Desk Open Position Component -->
                 <div class="coin-desk-open-position">
-                    <div style="width: 610px; height: 750px">
+                    <div style="width: 610px; height: 1000px">
                         <coin-desk-open-position />
                     </div>
                 </div>

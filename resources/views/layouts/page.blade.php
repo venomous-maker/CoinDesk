@@ -22,9 +22,8 @@ $user = auth()->user();
     <link rel="shortcut icon" type="image/x-icon" href="{{get_imported_asset("images/favicon.png")}}" />
 
     <!-- PAGE TITLE HERE -->
-    {{--    <title>Bit-invest Template | Home Page 1</title>--}}
-    <title inertia>{{ config('app.name', 'Laravel') }}</title>
-
+    {{--    <title>MAVEX CRYPT</title>--}}
+    <title inertia>{{ config('app.name', 'Mavex Crypt') }}</title>
     <!-- MOBILE SPECIFIC -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -90,7 +89,7 @@ $user = auth()->user();
                 <div class="container">
                     <div class="logo-header">
                         <a href="index.html">
-                            <img src="{{ get_logo() }}" width="216" height="37" alt="" />
+                            <img src="{{ get_logo(theme: 'dark') }}" width="216" height="37" alt="" />
                         </a>
                     </div>
                     <div class="header-info">
@@ -113,14 +112,11 @@ $user = auth()->user();
                                     </div>
                                     <div class="icon-content">
                                         <strong>Phone Number</strong>
-                                        <span>(+59)-2309-0202</span>
+                                        <span>+1(654)-321-7654</span>
                                     </div>
                                 </div>
                             </li>
-                            <li class="btn-col-last">
-                                <a class="site-button text-uppercase  font-weight-700">Requet a Quote</a>
-                            </li>
-                        </ul>
+                                                    </ul>
                     </div>
                 </div>
             </div>

@@ -100,7 +100,7 @@ const selectSwapToCurrency = (currency: Currency) => {
                         <h2
                             class="tw-ml-4 tw-text-xl tw-font-semibold tw-text-white"
                         >
-                            Swap Modal
+                            Swap
                         </h2>
                     </div>
 
@@ -209,9 +209,9 @@ const selectSwapToCurrency = (currency: Currency) => {
                         <div class="tw-mt-2">
                             <!-- Submit Button -->
                             <button
-                                class="tw-w-full tw-rounded-lg tw-bg-cyan-500 tw-py-3 tw-text-black tw-transition-colors hover:tw-bg-cyan-400"
+                                class="tw-w-full tw-rounded-lg tw-bg-[#edbe00] tw-py-3 tw-text-black tw-transition-colors hover:tw-bg-[#edbe00] "
                             >
-                                Transfer
+                                Exchange
                             </button>
                         </div>
                         <div>

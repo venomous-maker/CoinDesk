@@ -27,26 +27,38 @@
         </li>
 
         <li>
+        @if($user)
             <a href="{{route('market.index')}}">Market<i class="fa "></i></a>
+            @else
+ <a href="#" data-bs-toggle="modal" data-bs-target="#Login-form">Market<i class="fa "></i></a>
+
+            @endif
         </li>
 
         <li>
-            <a href="javascript:;">Trade<i class="fa fa-chevron-down"></i></a>
-            <ul class="sub-menu">
-                <li><a href="{{route('trade.trading')}}">Trading</a></li>
-                <li><a href="{{route('trade.perpetual')}}">Perpetual</a></li>
-                <li><a href="{{route('trade.spot')}}">Spot</a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="javascript:;">Finance<i class="fa fa-chevron-down"></i></a>
-            <ul class="sub-menu">
-                <li><a href="{{ route('finance.assets') }}">Assets</a></li>
-                <li><a href="{{route('finance.ai-quantization')}}">Ai Quantization</a></li>
+    @if($user)
+        <a href="javascript:;">Trade<i class="fa fa-chevron-down"></i></a>
+        <ul class="sub-menu">
+            <li><a href="{{ route('trade.trading') }}">Trading</a></li>
+            <li><a href="{{ route('trade.perpetual') }}">Perpetual</a></li>
+            <li><a href="{{ route('trade.spot') }}">Spot</a></li>
+        </ul>
+    @else
+        <a href="#" data-bs-toggle="modal" data-bs-target="#Login-form">Trade<i class="fa fa-chevron-down"></i></a>
+    @endif
+</li>
 
-            </ul>
-        </li>
-
+<li>
+    @if($user)
+        <a href="javascript:;">Finance<i class="fa fa-chevron-down"></i></a>
+        <ul class="sub-menu">
+            <li><a href="{{ route('finance.assets') }}">Assets</a></li>
+            <li><a href="{{ route('finance.ai-quantization') }}">Ai Quantization</a></li>
+        </ul>
+    @else
+        <a href="#" data-bs-toggle="modal" data-bs-target="#Login-form">Finance<i class="fa fa-chevron-down"></i></a>
+    @endif
+</li>
 {{--        <li>--}}
 {{--            <a href="javascript:;">Pages<i class="fa fa-chevron-down"></i></a>--}}
 {{--            <ul class="sub-menu">--}}

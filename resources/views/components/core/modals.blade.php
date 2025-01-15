@@ -26,7 +26,7 @@
                 </form>
             </div>
             <div class="modal-footer text-center">
-                <div class="text-center"><img src="{{get_logo()}}" alt=""></div>
+                <div class="text-center"><img src="{{get_logo(theme: 'dark')}}" alt=""></div>
             </div>
         </div>
     </div>
@@ -72,7 +72,7 @@
                 </form>
             </div>
             <div class="modal-footer text-center">
-                <div class="text-center"><img src="{{get_logo()}}" alt=""></div>
+                <div class="text-center"><img src="{{get_logo(theme:'dark')}}" alt=""></div>
             </div>
         </div>
     </div>

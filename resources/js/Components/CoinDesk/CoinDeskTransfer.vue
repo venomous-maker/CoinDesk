@@ -256,7 +256,7 @@ const handleContact = () => {
                                 <div>
                                     <!-- Submit Button -->
                                     <button
-                                        class="tw-w-full tw-rounded-lg tw-bg-cyan-500 tw-py-3 tw-text-black tw-transition-colors hover:tw-bg-cyan-400"
+                                        class="tw-w-full tw-rounded-lg tw-bg-[#edbe00] tw-py-3 tw-text-black tw-transition-colors hover:tw-bg-[#edbe00]"
                                     >
                                         Transfer
                                     </button>

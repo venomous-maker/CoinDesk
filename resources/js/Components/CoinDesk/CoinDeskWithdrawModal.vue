@@ -115,15 +115,12 @@
                                         <div>
                                             <div class="tw-flex tw-gap-3">
                                                 <button
-                                                    v-for="chain in [
-                                                        'ERC20',
-                                                        'TRC20',
-                                                    ]"
+                                                    v-for="chain in selectedCurrency.chains"
                                                     :key="chain"
                                                     :class="[
                                                         'tw-rounded-lg tw-border tw-px-4 tw-py-2',
                                                         selectedChain === chain
-                                                            ? 'tw-border-cyan-500 tw-text-cyan-500'
+                                                            ? 'tw-border-[#edbe00] tw-text-[#edbe00]'
                                                             : 'tw-border-gray-700 tw-text-gray-400',
                                                     ]"
                                                     @click="
@@ -136,8 +133,9 @@
                                             <p
                                                 class="tw-mt-2 tw-text-sm tw-text-gray-500"
                                             >
-                                                *ERC20 coin withdrawal, please
-                                                enter ERC20 wallet address
+                                                *{{ selectedChain }} coin
+                                                withdrawal, please enter ERC20
+                                                wallet address
                                             </p>
                                         </div>
 
@@ -167,7 +165,7 @@
                                                     class="tw-w-full tw-rounded-lg tw-border tw-border-gray-700 tw-bg-gray-800 tw-p-3 tw-pr-16 tw-text-white"
                                                 />
                                                 <button
-                                                    class="tw-absolute tw-right-3 tw-top-1/2 tw--translate-y-1/2 tw-text-cyan-500 hover:tw-text-cyan-400"
+                                                    class="tw-absolute tw-right-3 tw-top-1/2 tw--translate-y-1/2 tw-text-[#edbe00] hover:tw-text-cyan-400"
                                                 >
                                                     All
                                                 </button>
@@ -193,7 +191,7 @@
 
                                         <!-- Submit Button -->
                                         <button
-                                            class="tw-w-full tw-rounded-lg tw-bg-cyan-500 tw-py-3 tw-text-black tw-transition-colors hover:tw-bg-cyan-400"
+                                            class="tw-w-full tw-rounded-lg tw-bg-[#edbe00] tw-py-3 tw-text-black tw-transition-colors hover:tw-bg-[#edbe00]"
                                         >
                                             Withdraw
                                         </button>
@@ -286,7 +284,6 @@ const emit = defineEmits(['update:isOpen', 'close']);
 
 // State
 const isDropdownOpen = ref(false);
-const selectedChain = ref('ERC20');
 const amount = ref('');
 const depositAddress = ref('0x8A94B03cc7Da56a8A38B90792991c7CA96b3EC70');
 
@@ -295,6 +292,7 @@ interface Currency {
     id: string;
     name: string;
     icon: string;
+    chains: string[];
 }
 
 interface Exchange {
@@ -309,47 +307,54 @@ const currencies: Currency[] = [
         id: 'usdt',
         name: 'USDT',
         icon: 'https://static-00.iconduck.com/assets.00/tether-cryptocurrency-icon-2048x2048-dp13oydi.png',
+        chains: ['ECR20', 'TRC20'],
     },
     {
         id: 'eth',
         name: 'ETH',
         icon: 'https://cryptologos.cc/logos/ethereum-eth-logo.png',
+        chains: ['ETH'],
     },
     {
         id: 'btc',
         name: 'BTC',
         icon: 'https://cryptologos.cc/logos/bitcoin-btc-logo.png',
+        chains: ['BTC'],
     },
     {
         id: 'usdc',
         name: 'USDC',
         icon: 'https://cryptologos.cc/logos/usd-coin-usdc-logo.png',
+        chains: ['ECR-20'],
     },
     {
         id: 'dai',
         name: 'DAI',
         icon: 'https://cryptologos.cc/logos/multi-collateral-dai-dai-logo.png',
+        chains: ['ECR-20'],
     },
     {
         id: 'shib',
         name: 'SHIB',
         icon: 'https://cryptologos.cc/logos/shiba-inu-shib-logo.png',
+        chains: ['ECR-20'],
     },
     {
         id: 'xrp',
         name: 'XRP',
         icon: 'https://cryptologos.cc/logos/xrp-xrp-logo.png',
+        chains: ['Ripple'],
     },
 ];
 const selectedCurrency = ref(currencies[0]);
 
+const selectedChain = ref(selectedCurrency.value.chains[0]);
 // Methods
 const closeModal = () => {
     emit('update:isOpen', false);
     emit('close');
 };
 
-const chains = ['ERC20', 'TRC20'];
 const exchanges: Exchange[] = [
     {
         name: 'Gemini',

@@ -48,13 +48,13 @@ export default defineComponent({
 <template>
     <coin-desk-main-wrapper :with-space="false">
         <div class="widget-container">
-            <MiniChart
-                :options="{
-                    colorTheme: 'dark',
-                    symbol: 'FX:EURUSD',
-                    largeChartUrl: route('trade.trading'),
-                }"
-            />
+            <!-- <MiniChart -->
+            <!--     :options="{ -->
+            <!--         colorTheme: 'dark', -->
+            <!--         symbol: 'FX:EURUSD', -->
+            <!--         largeChartUrl: route('trade.trading'), -->
+            <!--     }" -->
+            <!-- /> -->
             <!--            <TechnicalAnalysis :options="{ colorTheme: 'dark', height: 420, symbol: 'FX:EURUSD', largeChartUrl: route('trade.trading'), }" />-->
 <!--            <SingleTicker-->
 <!--                :options="{-->
@@ -78,7 +78,7 @@ export default defineComponent({
         <Screener
             :options="{
                 width: '100%',
-                height: 610,
+                height: 1000,
                 defaultColumn: 'overview',
                 defaultScreen: 'general',
                 market: 'bitcoin',

@@ -7,15 +7,19 @@ if (!function_exists('get_imported_asset')) {
     }
 }
 if (!function_exists('get_logo')) {
-    function get_logo($footer = false) : string
+    function get_logo($footer = false, $theme = "light") : string
     {
         if($footer){
             return asset(get_imported_asset(env('APP_FOOTER_LOGO', 'images/logo/coindesk-white.jpeg')));
         }
+        if($theme == "light"){
         return asset(get_imported_asset(env('APP_LOGO', 'images/logo/coindesk-white.jpeg')));
+        }else{
+
+        return asset(get_imported_asset(env('APP_LOGO_DARK', 'images/logo/coindesk-white.jpeg')));
+        }
     }
 }
-
 
 if (!function_exists('buildDynamicMenu')) {
     function buildDynamicMenu($routes, $exemptPatterns = []) {
