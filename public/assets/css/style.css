@@ -8593,7 +8593,23 @@ ol.comment-list li.comment .comment-respond .comment-form p {
 	position:relative;
 }
 
+.header-nav .nav > div {
+	margin: 0px;
+	font-weight:400;
+	text-transform:uppercase;
+	position:relative;
+}
 .header-nav .nav > li > a {
+	border-radius: 0;
+	-webkit-border-radius:0;
+	-moz-border-radius:0;
+	color: #555;
+	font-size: 14px;
+	font-weight:600;
+	padding:35px 12px;
+	cursor:pointer;
+}
+.header-nav .nav > div > a {
 	border-radius: 0;
 	-webkit-border-radius:0;
 	-moz-border-radius:0;

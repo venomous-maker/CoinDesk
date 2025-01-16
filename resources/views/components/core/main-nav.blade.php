@@ -14,52 +14,200 @@
     $routes = Route::getRoutes()->getRoutesByName();
     $menuHtml = buildDynamicMenu($routes, $exemptPatterns);
 ?>
+<style>
+
+/* GENERAL NAVIGATION */
+.header-nav {
+    background: #0d1117;
+    padding: 10px 20px;
+}
+
+/* DESKTOP MENU */
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navbar-nav li {
+    list-style: none;
+    position: relative;
+}
+
+.navbar-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 12px 18px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: color 0.3s, background 0.3s;
+}
+
+/* HOVER EFFECTS */
+.navbar-nav li:hover {
+    color: #ec5598;
+}
+
+.navbar-nav li .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #1a1f27;
+    border-radius: 5px;
+    min-width: 180px;
+    padding: 10px 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-nav li:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 15px;
+    color: #ffffff;
+}
+
+.dropdown-menu a:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+
+.mobile-menu {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    padding: 10px;
+}
+
+.mobile-item {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.mobile-dropdown {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.mobile-dropdown-menu {
+    display: none;
+    flex-direction: column;
+    background: #f9f9f9;
+    padding-left: 20px;
+}
+
+.mobile-dropdown.active .mobile-dropdown-menu {
+    display: flex;
+}
+</style>
+<script>
+document.querySelectorAll('.mobile-dropdown-toggle').forEach(item => {
+    item.addEventListener('click', function(event) {
+        event.preventDefault();
+        let parent = this.parentElement;
+        parent.classList.toggle('active');
+    });
+});</script>
 <!-- MAIN Vav -->
-<div class="header-nav navbar-collapse collapse ">
-    <ul class=" nav navbar-nav">
-{{--        {!! $menuHtml !!}--}}
+
+<!-- NAVIGATION MENU -->
+<div class="header-nav navbar-collapse collapse">
+    <ul class="nav navbar-nav d-none d-lg-flex"> <!-- Desktop Navigation -->
         <li class="active">
-            <a href="{{route('home')}}">Home<i class="fa "></i></a>
+            <a href="{{route('home')}}">Home<i class="fa"></i></a>
         </li>
-
         <li>
-            <a href="{{route('home.about')}}">About Us<i class="fa "></i></a>
+            <a href="{{route('home.about')}}">About Us<i class="fa"></i></a>
         </li>
-
         <li>
-        @if($user)
-            <a href="{{route('market.index')}}">Market<i class="fa "></i></a>
+            @if($user)
+                <a href="{{route('market.index')}}">Market<i class="fa"></i></a>
             @else
- <a href="#" data-bs-toggle="modal" data-bs-target="#Login-form">Market<i class="fa "></i></a>
-
+                <a href="#" data-bs-toggle="modal" data-bs-target="#Login-form">Market<i class="fa"></i></a>
             @endif
         </li>
 
-        <li>
-    @if($user)
-        <a href="javascript:;">Trade<i class="fa fa-chevron-down"></i></a>
-        <ul class="sub-menu">
-            <li><a href="{{ route('trade.trading') }}">Trading</a></li>
-            <li><a href="{{ route('trade.perpetual') }}">Perpetual</a></li>
-            <li><a href="{{ route('trade.spot') }}">Spot</a></li>
-        </ul>
-    @else
-        <a href="#" data-bs-toggle="modal" data-bs-target="#Login-form">Trade<i class="fa fa-chevron-down"></i></a>
-    @endif
-</li>
+        <!-- TRADE DROPDOWN -->
+        <li class="dropdown">
+            @if($user)
+                <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">Trade <i class="fa fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="{{ route('trade.trading') }}" class="dropdown-item">Trading</a></li>
+                    <li><a href="{{ route('trade.perpetual') }}" class="dropdown-item">Perpetual</a></li>
+                    <li><a href="{{ route('trade.spot') }}" class="dropdown-item">Spot</a></li>
+                </ul>
+            @else
+                <a href="#" data-bs-toggle="modal" data-bs-target="#Login-form">Trade<i class="fa fa-chevron-down"></i></a>
+            @endif
+        </li>
 
-<li>
-    @if($user)
-        <a href="javascript:;">Finance<i class="fa fa-chevron-down"></i></a>
-        <ul class="sub-menu">
-            <li><a href="{{ route('finance.assets') }}">Assets</a></li>
-            <li><a href="{{ route('finance.ai-quantization') }}">Ai Quantization</a></li>
-            <li><a href="{{ route('finance.defi-loan') }}">Defi Loan</a></li>
-        </ul>
-    @else
-        <a href="#" data-bs-toggle="modal" data-bs-target="#Login-form">Finance<i class="fa fa-chevron-down"></i></a>
-    @endif
-</li>
+        <!-- FINANCE DROPDOWN -->
+        <li class="dropdown">
+            @if($user)
+                <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">Finance <i class="fa fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="{{ route('finance.assets') }}" class="dropdown-item">Assets</a></li>
+                    <li><a href="{{ route('finance.ai-quantization') }}" class="dropdown-item">AI Quantization</a></li>
+                    <li><a href="{{ route('finance.defi-loan') }}" class="dropdown-item">DeFi Loan</a></li>
+                </ul>
+            @else
+                <a href="#" data-bs-toggle="modal" data-bs-target="#Login-form">Finance<i class="fa fa-chevron-down"></i></a>
+            @endif
+        </li>
+    </ul>
+
+    <!-- MOBILE MENU -->
+    <div class="d-lg-none">
+        <div class="">
+            <div class="mobile-item">
+                <a href="{{route('home')}}">Home</a>
+            </div>
+            <div class="mobile-item">
+                <a href="{{route('home.about')}}">About Us</a>
+            </div>
+            <div class="mobile-item">
+                @if($user)
+                    <a href="{{route('market.index')}}">Market</a>
+                @else
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#Login-form">Market</a>
+                @endif
+            </div>
+
+            <!-- TRADE DROPDOWN -->
+            <div class="dropdown">
+                @if($user)
+                <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">Trade <i class="fa fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="{{ route('trade.trading') }}" class="dropdown-item">Trading</a></li>
+                    <li><a href="{{ route('trade.perpetual') }}" class="dropdown-item">Perpetual</a></li>
+                    <li><a href="{{ route('trade.spot') }}" class="dropdown-item">Spot</a></li>
+                </ul>
+            @else
+                <a href="#" data-bs-toggle="modal" data-bs-target="#Login-form">Trade<i class="fa fa-chevron-down"></i></a>
+            @endif
+            </div>
+
+            <!-- FINANCE DROPDOWN -->
+            <div class="dropdown">
+                @if($user)
+                <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">Finance <i class="fa fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="{{ route('finance.assets') }}" class="dropdown-item">Assets</a></li>
+                    <li><a href="{{ route('finance.ai-quantization') }}" class="dropdown-item">AI Quantization</a></li>
+                    <li><a href="{{ route('finance.defi-loan') }}" class="dropdown-item">DeFi Loan</a></li>
+                </ul>
+            @else
+                <a href="#" data-bs-toggle="modal" data-bs-target="#Login-form">Finance<i class="fa fa-chevron-down"></i></a>
+            @endif
+            </div>
+        </div>
+    </div>
+</div>
+
 {{--        <li>--}}
 {{--            <a href="javascript:;">Pages<i class="fa fa-chevron-down"></i></a>--}}
 {{--            <ul class="sub-menu">--}}

@@ -4,7 +4,7 @@
             <div class="wt-topbar-left">
                 <ul class="list-unstyled e-p-bx pull-left">
                     <li><i class="fa fa-envelope"></i>info@mavexcrypt.com</li>
-                    <li><i class="fa fa-phone"></i>+1(654) 321-7654</li>
+                    <li><i class="fa fa-phone"></i></li>
                 </ul>
             </div>
 
